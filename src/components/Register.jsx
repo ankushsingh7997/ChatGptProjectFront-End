@@ -60,7 +60,10 @@ export default function Register()
             }, 10000);
           }
           console.log(result)
-          if(result.status) {Swal.fire("Registered successfully")   
+          if(result.status) {Swal.fire("Registered successfully")
+          SetName('');
+          SetEmail('');
+          SetPassword('');   
            navigate("/Login")    
         }            //  SetError("registered successfully") 
           

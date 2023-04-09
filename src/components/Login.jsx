@@ -5,15 +5,17 @@ import style from "../componentcss/Login.module.css";
 import { useSetRecoilState } from "recoil";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import   {toast}  from "react-hot-toast";
+import { userId } from "../recoil/atom";
+
 export default function Login() {
   const [email, SetEmail] = useState();
   const [password, SetPassword] = useState();
   const [error, SetError] = useState("");
+  
+  // to set recoil
+  const setId=useSetRecoilState(userId) 
   const navigate=useNavigate()
 
-  console.log(email)
-  // const setId = useSetRecoilState(userId); // if we want to set recoil
 
   async function HandleSubmit(e) {
     e.preventDefault();
@@ -21,7 +23,7 @@ export default function Login() {
     { SetError("enter a valid email");
     setInterval(() => {
       SetError("")
-    }, 20000);
+    }, 5000);
   }
     else {
       let obj = { email, password };
@@ -40,9 +42,11 @@ export default function Login() {
       { SetError(result.message);
         setInterval(() => {
           SetError("")
-        }, 20000);
+        }, 5000);
       }
       else {
+        
+        setId(result.data["userKey"]);
         
         localStorage.setItem('login', true);
         localStorage.setItem('authToken',result.data["x-api-key"])

@@ -167,18 +167,25 @@ section{
     color: #ff3b30;
   } */
 
+*
+{
+  margin: 0;
+  padding: 0;
 
+}
   
   
 
 
 
   body {
+    border: 1px solid red;
     
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     font-family: "Helvetica Neue", sans-serif;
+    
     background: linear-gradient(90deg, #011936 0%, #1A1C22 35%, #2B2D3E 60%, #43475C 85%, #4D4F5C 100%);
 
   }
