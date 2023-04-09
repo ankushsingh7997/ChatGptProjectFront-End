@@ -2,18 +2,18 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import "../componentcss/Homepage.css";
+import style from "../componentcss/Homepage.module.css";
 
 function Homepage() {
   return (
-    <div className="homepage-container">
-      <h1>functionUp summer of code</h1>
-      <div className="homepage-links">
-        <p>Already have an account?</p>
+    <div className={style.homepage_container}>
+      <h1>welcome to chatGpt</h1>
+      <div className={style.homepage_links}>
+        <p>Already have account?</p>
         <Link to="/login">Login</Link>
       </div>
-      <div className="homepage-links">
-        <p>Need to create an account?</p>
+      <div className={style.homepage_links}>
+        <p>Need  an account?  </p>
         <Link to="/register">Register</Link>
       </div>
     </div>

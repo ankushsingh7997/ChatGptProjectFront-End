@@ -5,21 +5,22 @@
   }
   
   /* Add a background image to the page */
-  body {
+  /* body {
     background-image: url("https://images.unsplash.com/photo-1504489659614-4a4e8eeb64c6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzB8fGJlYWNofGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"); 
     background-size: cover;
     font-family: Arial, sans-serif;
     height: 100vh;
-  }
+  } */
   
   /* Style the container for the content */
-  .homepage-container {
+  .homepage_container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
-    background-color: var(--primary-bg-color);
+    background-color: #292d32;
+    outline: 2px solid #fff;
     padding: 4rem 2rem;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -30,41 +31,55 @@
     font-size: 3rem;
     margin-bottom: 2rem;
     color: #fff;
+    
     text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
     text-align: center;
   }
   
   /* Style the links */
-  .homepage-links {
+  .homepage_links {
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
   }
   
-  .homepage-links p {
+  .homepage_links p {
     margin-right: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #333;
     text-shadow: 1px 1px rgba(255, 255, 255, 0.2);
+    animation: glowing 2s ease-in-out infinite
+  }
+  @keyframes glowing {
+    0% {
+      text-shadow: 0px 0px 10px #fff;
+    }
+    /* 50% {
+      text-shadow: 0px 0px 20px #fff;
+    } */
+    100% {
+      text-shadow: 0px 0px 10px #fff;
+    }
   }
   
-  .homepage-links a {
+  .homepage_links a {
     font-size: 1.5rem;
     color: #333;
     text-decoration: none;
     border-bottom: 2px solid #333;
     padding-bottom: 0.25rem;
     transition: border-bottom-color 0.3s ease-in-out;
+    animation: glowing 2s ease-in-out infinite
   }
   
-  .homepage-links a:hover {
+  .homepage_links a:hover {
     border-bottom-color: #f5f5f5;
     color: #f5f5f5;
     text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
   }
   
   /* Add a background pattern to the links */
-  .homepage-links a::before {
+  .homepage_links a::before {
     content: "";
     display: block;
     position: absolute;
@@ -76,7 +91,7 @@
     transition: opacity 0.3s ease-in-out;
   }
   
-  .homepage-links a:hover::before {
+  .homepage_links a:hover::before {
     opacity: 1;
   }
   

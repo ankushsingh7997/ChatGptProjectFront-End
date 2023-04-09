@@ -1,4 +1,4 @@
-import '../componentcss/Register.css'
+import style from '../componentcss/Register.module.css'
 import React, {useState} from 'react'
 import { isValidEmail, isValidNo, passwordVal } from "../validations/validation"
 import Swal from 'sweetalert2'
@@ -21,8 +21,18 @@ export default function Register()
         
        if(name&&email&&password)  {
 
-      if(!isValidEmail(email)) SetError("enter a valid email")
-      else if(!passwordVal(password)) SetError("enter a valid password")
+      if(!isValidEmail(email)){ SetError("enter a valid email")
+      setInterval(() => {
+        SetError("")
+      }, 10000);
+
+       }
+      else if(!passwordVal(password)){ SetError("enter a valid password")
+      setInterval(() => {
+        SetError("")
+      }, 10000);
+
+      }
       
       else {
 
@@ -43,7 +53,12 @@ export default function Register()
         }
         )
           result=await result.json();
-          if(!result.status) SetError(result.message)
+          if(!result.status) 
+          {SetError(result.message)
+            setInterval(() => {
+              SetError("")
+            }, 10000);
+          }
           console.log(result)
           if(result.status) {Swal.fire("Registered successfully")   
            navigate("/Login")    
@@ -57,14 +72,18 @@ export default function Register()
               }
        else {
         SetError("please enter all the fields")
+        setInterval(() => {
+          SetError("")
+        }, 10000);
+
        }
 }
 
    return <div>
       
-       <div className="MinContainer">
-       <form className="Formm">
-        <section><h1>register</h1></section>
+       <div className={style.MinContainer}>
+       <form className={style.Formm}>
+        <section><h1 >register</h1></section>
        
        <section>
        
@@ -82,11 +101,11 @@ export default function Register()
           
 
         <section>
-            <button className='loginButton' onClick={handleSubmit}>submit</button>
+            <button className={style.loginButton} onClick={handleSubmit}>submit</button>
         </section>
 
         <section>
-            <div className="error" style={{color:"red"}}>{error} </div>
+            <div className={style.error} style={{color:"red"}}>{error} </div>
         </section>
 
 

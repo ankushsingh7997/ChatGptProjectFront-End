@@ -1,0 +1,87 @@
+
+.MinContainer
+{
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 100px;
+    background-color: #292d32;
+    border-radius: 5px;
+    outline: 2px solid #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25),
+                0px 0px 20px 5px #fff;
+    animation-name: move-container;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    
+}
+.Formm
+{
+    
+     display: flex;
+    flex-direction:column;
+     /* align-items:center; */
+     padding:2rem;
+     background-color: #333333;
+     
+
+
+     
+     
+     /* height: 60vh; */
+     
+     
+     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+     padding: 30px;
+}
+
+
+.loginButton {
+    background-color: #0070f3;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .loginButton:hover {
+    background-color: #0058c0;
+  }
+.Formm:hover
+{
+   
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.error {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    color: #ff3b30;
+  }
+
+  .error {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    color: #ff3b30;
+    animation: glow 1s ease-in-out infinite;
+  }
+  
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 0 rgba(255, 59, 48, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(255, 59, 48, 0.7);
+    }
+    100% {
+      box-shadow: 0 0 0 rgba(255, 59, 48, 0.7);
+    }
+  }
+
+
