@@ -81,6 +81,7 @@ list-style-type: none;
 .question
 {
   
+  
     padding-left:0.1rem ;
     color:aliceblue;
     display:flex;
@@ -113,6 +114,7 @@ div.question:hover
 }
 /* chat section */
  .mainCard {
+    
   
     display: flex;
     flex-direction: column;
@@ -129,6 +131,7 @@ div.question:hover
   .chatCard {
     
     
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -141,6 +144,7 @@ div.question:hover
   }
   .myChatList
   {
+   
     width:100%;
    
     
@@ -151,10 +155,12 @@ div.question:hover
   
   .conversationOuther {
     
+    
     display: flex;
     width: 100%;
     flex-direction: column;
     align-items: center;
+    /* justify-content: space-between; */
     background-color: #212121;
     margin-top: 20px;
     padding: 10px;
@@ -162,11 +168,19 @@ div.question:hover
     
     
   }
+  .convoAndLogo
+  {display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    
+  }
   
   .conversation {
+   
     display: flex;
     align-items: flex-start;
-    flex-direction: column;
+    /* flex-direction: column; */
     width: 70%;
   }
   
@@ -250,12 +264,16 @@ div.question:hover
    height:50%
   }
   .image{
-   border:1px solid cyan;
+   /* border:1px solid cyan; */
+   display:flex;
+   justify-content: center;
+   align-items: center;
    width:50%;
    border-radius: 50%;
     height:40%;
 
   }
+  
   .userName
   {
     display: flex;

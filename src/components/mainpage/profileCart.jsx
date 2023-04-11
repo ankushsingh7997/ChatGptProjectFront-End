@@ -6,6 +6,7 @@ import { Icon } from "@mui/material";
 import { useRecoilState,useSetRecoilState } from "recoil";
 import { userChat,userId,userprofileData } from "../../recoil/atom";
 import { useNavigate } from "react-router-dom";
+import Avatar from '@mui/material/Avatar';
 
 
 function Profile()
@@ -35,8 +36,9 @@ function handleLogout()
         <div className={style.profileCard}>
             
             {/* <div className={style.imageBox}> */}
-                <div className={style.image}>image</div>
+                <div className={style.image}>{userData.profileImage!=''? <Avatar src={userData.profileImage} alt='image'></Avatar>:<Avatar  src="/broken-image.jpg" sx={{ width: 146, height: 136, fontSize: '5rem' }} ></Avatar>}</div>
                 <div className={style.userName}>{userData.name}</div>
+                
             {/* </div> */}
 
             {/* <div className={style.restBox}> */}

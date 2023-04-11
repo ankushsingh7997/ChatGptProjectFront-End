@@ -7,7 +7,8 @@ import SmartToyIcon from '@mui/icons-material/SmartToy';
 import { Icon } from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 import Button from '@mui/material/Button';
-
+import ShareIcon from '@mui/icons-material/Share';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 function ChatComponent()
 {  const [userChatLog,setUserChat]=useRecoilState(userChat) 
   // console.log(userChatLog)
@@ -50,6 +51,20 @@ function ChatComponent()
         }
    
      }
+     const handleCopy=(text)=>
+     {
+      navigator.clipboard.writeText(text).then(()=>console.log('copied')).catch(()=>console.log('some error'))
+
+      // here in then  i  have to add code to show that text is successfully copied
+         
+     }
+     
+
+
+    
+
+
+
 
 
 
@@ -87,11 +102,19 @@ function ChatComponent()
         return (
           
             <div key={index} className={style.conversationOuther}>
+              <div className={style.convoAndLogo}>
+
                 <div className={style.conversation}>
                    
-                    <li className={style.BotReply}><Icon><SmartToyIcon></SmartToyIcon></Icon>{" : "}{item.text}</li>
+                    <li className={style.BotReply}><Icon><SmartToyIcon></SmartToyIcon></Icon>{" : "}{item.text}</li> 
+                    
                     
                 </div>
+                <div>
+               <span onClick={()=>handleCopy(item.text)}> <Icon><ContentCopyIcon/></Icon></span>
+               <span> <Icon><ShareIcon/></Icon></span>
+               </div>
+             </div>
              </div>
             
         );
@@ -105,9 +128,14 @@ function ChatComponent()
     
       </div>
       <div className={style.submitQuestion}>
-      <input type="text" placeholder="Type your question here" value={userQuestion}className={style.inputQuestion} onChange={(e) => {
+      <input type="text" placeholder="Type your question here" value={userQuestion}className={style.inputQuestion} onKeyDown={(e) => {
+    if (e.key === 'Enter') {
+      
+      handleQuestion();
+    }
+  }} onChange={(e) => {
               setUserQuestion(e.target.value);
-            }}
+            }} 
           />
           <Button variant="contained" endIcon={<SendIcon />} type="submit" className={style.submitChat} onClick={handleQuestion} >
             Send
