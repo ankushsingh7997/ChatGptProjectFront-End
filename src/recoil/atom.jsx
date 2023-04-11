@@ -8,4 +8,8 @@ export const userChat = atom({
 export const userId=atom({
     key:"userId",
     default:""
+});
+export const userprofileData=atom({
+  key:"userprofileData",
+  default:{}
 })

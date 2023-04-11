@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import style from "../../componentcss/Mainpage.module.css";
-import { userChat, userId } from "../../recoil/atom";
-import { useRecoilState ,useRecoilValue } from "recoil";
+import { userChat, userId,userprofileData } from "../../recoil/atom";
+import { useRecoilState ,useRecoilValue, useSetRecoilState } from "recoil";
 // import { useRecoilValue } from "recoil";
 import { useNavigate } from "react-router-dom";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
@@ -14,6 +14,7 @@ function LeftSlide() {
   
   const [userData,setUserData]= useRecoilState(userChat);
   const userid = useRecoilValue(userId);
+  const setUserProfile=useSetRecoilState(userprofileData)
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -24,7 +25,10 @@ function LeftSlide() {
     (async () => {
       await fetch(`http://localhost:4000/fetchuser/${userid}`)
         .then((res) => res.json())
-        .then((data) => setUserData(data.chatLogs.questions));
+        .then((data) => {
+          setUserData(data.chatLogs.questions)
+          setUserProfile(data.data)
+        });
     })();
   }, []);
 

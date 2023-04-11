@@ -22,7 +22,7 @@
 }
 .slideCard
 {
-  border:1px solid red;
+  
    
     min-width: 12rem;
     height:100%;
@@ -44,7 +44,7 @@ list-style-type: none;
 }
 .myList
 {
-  border:1px solid red;
+  
     height:50%;
     overflow-y: auto;
     overflow-x: hidden;
@@ -234,8 +234,9 @@ div.question:hover
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    border:1px solid cyan;
+    justify-content: space-evenly;
+  
+    
     width:100%;
     height:100%;
   }
@@ -244,22 +245,27 @@ div.question:hover
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    border:1px solid red;
+    
    width:100%;
    height:50%
   }
   .image{
    border:1px solid cyan;
    width:50%;
-   border-radius: 100%;
-    height:60%;
+   border-radius: 50%;
+    height:40%;
 
   }
   .userName
   {
-     border: 1px solid cyan;
+    display: flex;
+    justify-content: space-evenly;
+
+    align-items: center;
+     
      width:50%;
-     height:15%
+     height:13%;
+     border-radius: 5px;
   }
   .restBox
   {
@@ -267,7 +273,7 @@ div.question:hover
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    border:1px solid red;
+    
    width:100%;
    height:50%
 
@@ -280,10 +286,11 @@ div.question:hover
 
     align-items: center;
     text-align: center;
+    /* border: 1px solid cyan; */
     
     width:50%;
-    height: 20%;
-    border:none;
+    height: 13%;
+    /* border:none; */
     border-radius: 5px;
 
   }
@@ -294,15 +301,17 @@ div.question:hover
 
   }
   .optional{
+    /* border:1px solid cyan; */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
-    border:none;
+   
+    /* border:none; */
     border-radius: 5px;
     
     width:50%;
-    height: 20%;
+    height: 13%;
 
   }
   .optional:hover
