@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useState,useRef, useEffect } from "react";
 import style from "../../componentcss/Mainpage.module.css";
-import { userId } from "../../recoil/atom";
-import { useRecoilValue } from "recoil";
+import { userId ,userChat} from "../../recoil/atom";
+import { useRecoilState, useRecoilValue,useSetRecoilState } from "recoil";
+import PersonIcon from '@mui/icons-material/Person';
+import SmartToyIcon from '@mui/icons-material/SmartToy';
+import { Icon } from "@mui/material";
+import SendIcon from '@mui/icons-material/Send';
+import Button from '@mui/material/Button';
 
- function ChatComponent()
- {
-    const userid=useRecoilValue(userId)
-    const[userQuestion,setUserQuestion]=useState("")
-    const[conversation,setConversation]=useState([])
+function ChatComponent()
+{  const [userChatLog,setUserChat]=useRecoilState(userChat) 
+  // console.log(userChatLog)
+  const userid=useRecoilValue(userId)
+  const[userQuestion,setUserQuestion]=useState("")
+  const[conversation,setConversation]=useState([])
+  const myChatRef = useRef(null);
 
     async function handleQuestion()
     {
@@ -30,52 +37,68 @@ import { useRecoilValue } from "recoil";
 
           if(!result.status)
           {
-
+              // need to add error here
           }
           else{
 
-            console.log(result.message)
+
+            // console.log(result.message)
             setConversation([conversation.push({user:"bot",text:`${result.message}`}),...conversation])
+            setUserChat([{uniqueKey:result.uniqueKey,question:result.question,answer:result.message},...userChatLog])
 
           }
-          
-
+        }
+   
      }
-     console.log(conversation)
-     
 
-    }
+
+
+ 
+    
+
+
+     useEffect(() => {
+      myChatRef.current.scrollTo(0, myChatRef.current.scrollHeight);
+    }, [conversation]);
+
 
     return(
        <div className={style.mainCard}>
         
         <div className={style.chatCard}>
+          
             
-            
+        <ul className={style.myChatList} ref={myChatRef}>
 
-        {conversation.map((item)=>{
+        {conversation.map((item,index)=>{
     if(item.user === 'me'&&item.message!='') {
         return (
-            <div className={style.conversationOuther}>
+          
+            <div key={index} className={style.conversationOuther}>
                 <div className={style.conversation}>
-                    <ul>
-                        <li className={style.BotReply}>{item.text}</li>
-                    </ul>
+                    
+                    <li className={style.userChat}><Icon><PersonIcon></PersonIcon></Icon>{" : "}{item.text}</li>
+                   
                 </div>
             </div>
+            
         );
     } else if(item.user === 'bot'&&item.message!='') {
         return (
-            <div className={style.conversationOuther}>
+          
+            <div key={index} className={style.conversationOuther}>
                 <div className={style.conversation}>
-                    <ul>
-                        <li className={style.userChat}>{item.text}</li>
-                    </ul>
+                   
+                    <li className={style.BotReply}><Icon><SmartToyIcon></SmartToyIcon></Icon>{" : "}{item.text}</li>
+                    
                 </div>
-            </div>
+             </div>
+            
         );
     }
 })}
+</ul>
+
     
                 
  
@@ -86,9 +109,9 @@ import { useRecoilValue } from "recoil";
               setUserQuestion(e.target.value);
             }}
           />
-          <button type="submit" className={style.submitChat} onClick={handleQuestion} >
+          <Button variant="contained" endIcon={<SendIcon />} type="submit" className={style.submitChat} onClick={handleQuestion} >
             Send
-          </button>
+          </Button>
           </div>
 
       </div> 
@@ -97,3 +120,5 @@ import { useRecoilValue } from "recoil";
 
  }
  export default ChatComponent;
+
+

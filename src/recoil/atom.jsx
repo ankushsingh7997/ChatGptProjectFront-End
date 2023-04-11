@@ -1,7 +1,7 @@
 import { atom } from "recoil";
 
-export const UserDetail = atom({
-  key: "UserDetail",
+export const userChat = atom({
+  key: "userChat",
   default: [],
 });
 
