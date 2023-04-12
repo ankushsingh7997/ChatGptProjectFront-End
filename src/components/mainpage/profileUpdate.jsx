@@ -59,6 +59,9 @@ function EditProfile()
         {
          const formData = new FormData();
          formData.append('image', file, file.name);
+         if (editName !== "") {
+          formData.append('name', editName);
+        }
          
          const config = {
            headers: {
@@ -72,7 +75,7 @@ function EditProfile()
            .catch((error) =>error);
    
    
-       console.log(responseData)
+       
            if(responseData.status)
            {
             setUserData({...userData,...responseData.data.data})
@@ -106,6 +109,7 @@ function EditProfile()
 
      setChatVisible(true);
      setEditProfileVisibile(false);
+     setEditNameVisiblity(false)
 
     }
 
