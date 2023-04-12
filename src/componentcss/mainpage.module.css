@@ -1,340 +1,352 @@
 :root {
-    --royal-gray: #81878C;
-    --light-gray: #D3D3D3;
-    --color-span: #212121;
-  }
-  
-
-
-.mainContainer
-{
-  
-    position: absolute;
-    top: 0;
-    left: 0;
-    height:100%;
-    
-    display:flex;
-    justify-content: space-between;
-    
-    width:100%
-  
+  --royal-gray: #81878c;
+  --light-gray: #d3d3d3;
+  --color-span: #212121;
 }
-.slideCard
-{
-  
-   
-    min-width: 12rem;
-    height:100%;
-    width:23%;
-    
-    background-color:  #212121;
 
+.mainContainer {
+  /* border:1px solid red; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+}
+.slideCard {
+
+  min-width: 12rem;
+  height: 100%;
+  width: 23%;
+
+  background-color: #212121;
 }
 /* .mainCard
 {
     border: 1px solid white;
     width:80%
 } */
-li{
-list-style-type: none;
+li {
+  list-style-type: none;
   margin-bottom: 10px;
   text-align: start;
-
 }
-.myList
-{
-  
-    height:50%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    
+.myList {
+  height: 50%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 ::-webkit-scrollbar {
-    width: 8px; /* width of the scrollbar */
-  }
-  
-  /* Style the thumb */
-  ::-webkit-scrollbar-thumb {
-    background: #6B7280; /* color of the thumb */
-    border-radius: 5px; /* rounded corners */
-  }
-  
-  /* Style the track */
-  ::-webkit-scrollbar-track {
-    background: #F3F4F6; /* color of the track */
-  }
-  
-  /* Hide scrollbar buttons */
-  ::-webkit-scrollbar-button {
-    display: none;
-  }
-  /* Show scrollbar on hover */
- ::-webkit-scrollbar:hover {
-    width: 16px;
-  }
-  
-  /* Hide scrollbar when not hovering */
-  ::-webkit-scrollbar:not(:hover) {
-    width: 8px;
-  } 
-.question
-{
-  
-  
-    padding-left:0.1rem ;
-    color:aliceblue;
-    display:flex;
-    justify-content: flex-start;
-    padding-bottom: 20px;
-    font-weight: 700;
-    
+  width: 8px; /* width of the scrollbar */
 }
-.mySpan
-{
-    color: var(--color-span);
-    
+
+/* Style the thumb */
+::-webkit-scrollbar-thumb {
+  background: #6b7280; /* color of the thumb */
+  border-radius: 5px; /* rounded corners */
 }
-div.question:hover 
-{
-    --color-span: #fff;
-    color: #fff;
-    animation:glow 2s ease-in-out infinite
+
+/* Style the track */
+::-webkit-scrollbar-track {
+  background: #f3f4f6; /* color of the track */
+}
+
+/* Hide scrollbar buttons */
+::-webkit-scrollbar-button {
+  display: none;
+}
+/* Show scrollbar on hover */
+::-webkit-scrollbar:hover {
+  width: 16px;
+}
+
+/* Hide scrollbar when not hovering */
+::-webkit-scrollbar:not(:hover) {
+  width: 8px;
+}
+.question {
+  padding-left: 0.1rem;
+  color: aliceblue;
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 20px;
+  font-weight: 700;
+}
+.mySpan {
+  color: var(--color-span);
+}
+div.question:hover {
+  --color-span: #fff;
+  color: #fff;
+  animation: glow 2s ease-in-out infinite;
 }
 
 @keyframes glow {
-    0% {
-        text-shadow: 0px 0px 5px #fff;
-      }
-    
-      100% {
-        text-shadow: 0px 0px 1px #fff;
-      }
-    
+  0% {
+    text-shadow: 0px 0px 5px #fff;
+  }
+
+  100% {
+    text-shadow: 0px 0px 1px #fff;
+  }
 }
 /* chat section */
- .mainCard {
-    
-  
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    height: 100%;
-    background-color: #282c34;
-    color: #fff;
-    padding: 20px;
-  }
-  
-  
-  .chatCard {
-    
-    
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
-    
-    height:70%;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
-  .myChatList
-  {
-   
-    width:100%;
-   
-    
-    overflow-y: auto;
-    overflow-x: hidden;
-    overflow-wrap: break-word;
-  }
-  
-  .conversationOuther {
-    
-    
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: space-between; */
-    background-color: #212121;
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    
-    
-  }
-  .convoAndLogo
-  {display: flex;
-    align-items: center;
-    justify-content: center;
-    width:100%;
-    
-  }
-  
-  .conversation {
-   
-    display: flex;
-    align-items: flex-start;
-    /* flex-direction: column; */
-    width: 70%;
-  }
-  
-  .userChat {
-    
-    background-color: #282c34;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    align-self: flex-start;
-  }
-  
-  .BotReply {
-    
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    align-self: flex-start;
-  }
-  
-  .submitQuestion {
-    height: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-  }
-  
-  .inputQuestion {
-    border: none;
-    width: 80%;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 20px;
-    font-size: 16px;
-  }
-  
-  .submitChat {
-    background-color: #0070f3;
-    color: #fff;
-    border-radius: 5px;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .submitChat:hover {
-    background-color: #0058c0;
-  }
-  
+.mainCard {
+  /* border:1px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+  background-color: #282c34;
+  color: #fff;
+  padding: 20px;
+}
 
-  /* profile section */
-  .card{
-    height: 50%;
-  }
-  .profileCard
-  {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+.chatCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+
+  height: 70%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.myChatList {
+  width: 100%;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+}
+
+.conversationOuther {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-between; */
+  background-color: #212121;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.convoAndLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.conversation {
+  display: flex;
+  align-items: flex-start;
+  /* flex-direction: column; */
+  width: 70%;
+}
+
+.userChat {
+  background-color: #282c34;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+
+.BotReply {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+
+.submitQuestion {
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.inputQuestion {
+  border: none;
+  width: 80%;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.submitChat {
+  background-color: #0070f3;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submitChat:hover {
+  background-color: #0058c0;
+}
+
+/* profile section */
+.card {
+  height: 50%;
+}
+.profileCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  width: 100%;
+  height: 100%;
+}
+.imageBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  width: 100%;
+  height: 50%;
+}
+.image {
+  /* border:1px solid cyan; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  border-radius: 50%;
+  height: 40%;
+}
+
+.userName {
+  background-color: #6b7280;
+  display: flex;
+  justify-content: space-evenly;
+
+  align-items: center;
+
+  width: 50%;
+  height: 13%;
+  border-radius: 5px;
+}
+.restBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  width: 100%;
+  height: 50%;
+}
+
+.logout {
   
-    
-    width:100%;
-    height:100%;
-  }
-  .imageBox{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    
-   width:100%;
-   height:50%
-  }
-  .image{
-   /* border:1px solid cyan; */
-   display:flex;
-   justify-content: center;
-   align-items: center;
-   width:50%;
-   border-radius: 50%;
-    height:40%;
+  display: flex;
+  justify-content: space-evenly;
 
-  }
+  align-items: center;
+  text-align: center;
+  /* border: 1px solid cyan; */
+
+  width: 50%;
+  height: 13%;
+  /* border:none; */
+  border-radius: 5px;
+}
+.logout:hover {
+  background-color: #282c34
+}
+.optional {
+  /* border:1px solid cyan; */
   
-  .userName
-  {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
 
-    align-items: center;
-     
-     width:50%;
-     height:13%;
-     border-radius: 5px;
-  }
-  .restBox
-  {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    
-   width:100%;
-   height:50%
+  /* border:none; */
+  border-radius: 5px;
 
-  }
+  width: 50%;
+  height: 13%;
+}
+.optional:hover {
+  background-color: #282c34
+}
 
-  .logout
-  {
-    display: flex;
-    justify-content: space-evenly;
+.profileEditCard
+{
+  border :1px solid cyan;
 
-    align-items: center;
-    text-align: center;
-    /* border: 1px solid cyan; */
-    
-    width:50%;
-    height: 13%;
-    /* border:none; */
-    border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 
-  }
-  .logout:hover
-  {
-    background-color: #6B7280;
-    
+  width: 50%;
+  height: 90%;
+}
+.image2 {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  border-radius: 50%;
+  height: 50%;
+}
 
-  }
-  .optional{
-    /* border:1px solid cyan; */
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-   
-    /* border:none; */
-    border-radius: 5px;
-    
-    width:50%;
-    height: 13%;
+.ProfilemainCard {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 80%;
+  height: 100%;
+  background-color: #282c34;
+  color: #fff;
+  padding: 20px;
+}
 
-  }
-  .optional:hover
-  {
-    background-color: #6B7280;
-    
+.icon:hover{
+  color: #0058c0;
+  
+}
+.editUserName
+{
+ 
+ font-size: 1.5rem;
 
-  }
+}
+
+.updateCancleButton
+{
+  /* background-color: #6b7280; */
+  display: flex;
+  justify-content: space-evenly;
+
+  align-items: center;
+
+  width: 50%;
+  height: 10%;
+  border-radius: 5px;
+}

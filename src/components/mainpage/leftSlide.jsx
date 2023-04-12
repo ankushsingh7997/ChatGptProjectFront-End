@@ -8,6 +8,8 @@ import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutline
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import Icon from "@mui/material/Icon";
 import Profile from "./profileCart";
+import { chatLogView } from "../../recoil/atom";
+
 
 function LeftSlide() {
   // user chat
@@ -16,6 +18,7 @@ function LeftSlide() {
   const userid = useRecoilValue(userId);
   const setUserProfile=useSetRecoilState(userprofileData)
   const navigate = useNavigate();
+  const setChatLog=useSetRecoilState(chatLogView)
 
   useEffect(() => {
     if (localStorage.getItem("login") == "false") {
@@ -31,6 +34,8 @@ function LeftSlide() {
         });
     })();
   }, []);
+
+  
 
 
 
@@ -55,6 +60,11 @@ function LeftSlide() {
 
            
   }
+  const onclickChat=(item)=>{
+    console.log(item)
+    setChatLog([{user:'me',text:item.question},{user:'bot',text:item.answer}])
+    
+  }
 
   
 
@@ -66,7 +76,7 @@ function LeftSlide() {
         <h3>chat logs</h3>
           {userData &&
             userData.map((item) => (
-              <li key={item.uniqueKey}>
+              <li key={item.uniqueKey}  >
                 <div className={style.question}>
                   <span>
                     {" "}
@@ -74,7 +84,7 @@ function LeftSlide() {
                       <ChatBubbleOutlineOutlinedIcon />
                     </Icon>
                   </span>
-                  <label>{item.question}</label>{" "}
+                  <label  onClick={()=>onclickChat(item)}>{item.question}</label>{" "}
                   <span className={style.mySpan}>
                     {" "}<span onClick={()=>handleDelete(item.uniqueKey)} >
                     <Icon >
@@ -98,3 +108,9 @@ function LeftSlide() {
 }
 
 export default LeftSlide;
+
+
+
+
+
+
