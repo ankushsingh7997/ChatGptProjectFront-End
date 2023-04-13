@@ -14,6 +14,7 @@ import FileUploadIcon from "@mui/icons-material/FileUpload";
 import Swal from "sweetalert2";
 import axios from "axios";
 import Button from "@mui/material/Button";
+import BorderColorIcon from '@mui/icons-material/BorderColor';
 
 function EditProfile() {
   const [userData, setUserData] = useRecoilState(userprofileData);
@@ -50,9 +51,11 @@ function EditProfile() {
   }
 
   const handleUpdate = async () => {
-    if (file) {
+    if (file||editName!='') {
       const formData = new FormData();
+      if(file){
       formData.append("image", file, file.name);
+      }
       if (editName !== "") {
         formData.append("name", editName);
       }
@@ -106,29 +109,30 @@ function EditProfile() {
           {profileImage != "" ? (
             <Avatar
               src={profileImage}
-              sx={{ width: 270, height: 226, fontSize: "5rem" }}
+              sx={{ width: 220, height: 216, fontSize: "5rem" }}
               alt="image"
             ></Avatar>
           ) : (
             <Avatar
               src="/broken-image.jpg"
-              sx={{ width: 270, height: 226, fontSize: "5rem" }}
+              sx={{ width: 220, height: 216, fontSize: "5rem" }}
             ></Avatar>
           )}
         </div>
         <input type="file" hidden onChange={handleChange} ref={inputRef} />
         <div onClick={handleClick} className={style.icon}>
+          
+          <label>upload image</label>
           <Icon>
             <FileUploadIcon />
           </Icon>
-          <label>upload image</label>
         </div>
         <div className={style.userName}>
           <label className={style.editUserName}>{profileName}</label>
         </div>
         {editNameVisiblity ? (
           <div>
-            <input
+            <input className={style.editInput}
               value={editName}
               type="text"
               placeholder="enter your name"
@@ -144,10 +148,11 @@ function EditProfile() {
           }}
           className={style.icon}
         >
+          
+          <label>edit name</label>
           <Icon>
             <EditIcon />
           </Icon>
-          <label>edit name</label>
         </div>
 
         <div className={style.updateCancleButton}>

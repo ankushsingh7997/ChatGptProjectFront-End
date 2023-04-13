@@ -32,7 +32,7 @@ function Profile() {
 
   return (
     <div className={style.profileCard}>
-      {/* <div className={style.imageBox}> */}
+      
       <div className={style.image}>
         {userData.profileImage != "" ? (
           <Avatar
@@ -49,9 +49,9 @@ function Profile() {
       </div>
       <div className={style.userName}>{userData.name}</div>
 
-      {/* </div> */}
+      
 
-      {/* <div className={style.restBox}> */}
+      
       <div className={style.logout} onClick={handleLogout}>
         <Icon>
           <LogoutIcon></LogoutIcon>
