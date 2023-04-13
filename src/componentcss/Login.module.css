@@ -1,172 +1,4 @@
 
-/* .Container{
-    height: 70vh;
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    }
-.Form
-{
-    
-    display: flex;
-    flex-direction:column;
-     align-items:center;
-     padding:2rem; */
-     
-     /* background-color: #333333;
-     transition: all 0.3s ease;
-
-
-     
-     border-radius: 70px;
-     height: 60vh;
-     
-     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-
-
-} */
-/* .Form:hover
-{
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-input{
-     padding :1rem;
-    width:15rem;
-    border: none;
-    border-radius: 30px;
-    outline: none; 
-
-  
-
-}
-label{
-    
-    padding: 2rem;
-    font-size: large;
-    font-weight: 600;
-    
-    
-}
-section{
-    margin: 0.5rem;
-} */
-
-/* .loginButton {
-    border-radius: 25px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    background-color: #c62828;
-    
-    font-size: 1.4em;
-    font-weight: 500;
-    font-family: inherit;
-    width:15vw;
-    
-    cursor: pointer;
-    transition: border-color 0.25s;
-
-   
-  }
-  .loginButton:hover {
-   
-    background-color: #8e0000;
-
-
-  } */
-  /* Button {
-    border-radius: 25px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    
-    font-size: 1.4em;
-    font-weight: 500;
-    font-family: inherit;
-    width:15vw;
-    background-color: #1a1a1a; 
-    cursor: pointer;
-    transition: border-color 0.25s;
-
-   
-  }
-
-  button:hover {
-   
-    background-color: #555;
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-
-
-  } */
-
-  /* 
-  
-  
-  .Container {
-    width: 400px;
-    margin: 0 auto;
-    margin-top: 100px;
-    background-color: #292d32;
-    border-radius: 5px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  }
-  
-  .Form {
-    padding: 30px;
-  }
-  
-  h1 {
-    font-size: 24px;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #fff;
-  }
-  
-  input[type="email"],
-  input[type="password"] {
-    width: 100%;
-    height: 40px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #41464c;
-    margin-bottom: 20px;
-    font-size: 14px;
-    color: #fff;
-    background-color: #41464c;
-  }
-  
-  input[type="email"]:focus,
-  input[type="password"]:focus {
-    outline: none;
-    border-color: #0070f3;
-    background-color: #1c1f24;
-  }
-  
-  .loginButton {
-    background-color: #0070f3;
-    color: #fff;
-    border-radius: 5px;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .loginButton:hover {
-    background-color: #0058c0;
-  }
-  
-  .error {
-    margin-top: 10px;
-    font-size: 14px;
-    font-weight: 600;
-    text-align: center;
-    color: #ff3b30;
-  } */
-
 *
 {
   margin: 0;
@@ -228,6 +60,7 @@ section{
 
 
   .Container {
+    
     width: 400px;
     margin: 0 auto;
     margin-top: 100px;
@@ -235,7 +68,7 @@ section{
     border-radius: 5px;
     outline: 2px solid #fff;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25),
-                0px 0px 20px 5px #fff;
+                0px 0px 10px 5px #fff;
     animation-name: move-container;
     animation-duration: 1s;
     animation-fill-mode: forwards;

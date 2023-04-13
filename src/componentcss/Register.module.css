@@ -8,7 +8,7 @@
     border-radius: 5px;
     outline: 2px solid #fff;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25),
-                0px 0px 20px 5px #fff;
+                0px 0px 10px 5px #fff;
     animation-name: move-container;
     animation-duration: 1s;
     animation-fill-mode: forwards;

@@ -26,7 +26,7 @@ function ChatComponent() {
   const myChatRef = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const anchorEl = useRef(null);
-  const useChatLog=useRecoilValue(chatLogView)
+  const useChatLog = useRecoilValue(chatLogView);
   const [isDisabled, setIsDisabled] = useState(false);
 
   // share option methods
@@ -39,8 +39,9 @@ function ChatComponent() {
   };
 
   async function handleQuestion() {
-    setIsDisabled(true)
+    
     if (userQuestion.trim() != "") {
+      setIsDisabled(true);
       let question = userQuestion;
       setUserQuestion("");
 
@@ -49,7 +50,6 @@ function ChatComponent() {
         ...conversation,
       ]);
 
-    
       let result = await fetch(`http://localhost:4000/ask/${userid}`, {
         method: "POST",
         headers: {
@@ -66,13 +66,11 @@ function ChatComponent() {
       if (!result.status) {
         // need to add error here
       } else {
-        
         setConversation([
           conversation.push({ user: "bot", text: result.message }),
           ...conversation,
         ]);
 
-        
         setUserChat([
           {
             uniqueKey: result.uniqueKey,
@@ -82,9 +80,7 @@ function ChatComponent() {
           ...userChatLog,
         ]);
 
-        
-        setIsDisabled(false)
-        
+        setIsDisabled(false);
       }
     }
   }
@@ -104,28 +100,28 @@ function ChatComponent() {
       </FacebookShareButton>
     );
   };
+  const handleClick = (text) => {
+    const textToShare = text;
+    const facebookShareButton = handleFacebookShare(textToShare);
+    
+    console.log("Clicked!");
+  };
 
   const handleTwitterShare = (text) => {};
   const handleLinkedinShare = (text) => {};
 
-// set chat from logs
+  // set chat from logs
 
-
-const setChat=()=>{
-     
-  setConversation([...useChatLog])
-  
-}
-useEffect(() => {
-  setChat()
-}, [useChatLog]);
-
+  const setChat = () => {
+    setConversation([...useChatLog]);
+  };
+  useEffect(() => {
+    setChat();
+  }, [useChatLog]);
 
   useEffect(() => {
     myChatRef.current.scrollTo(0, myChatRef.current.scrollHeight);
   }, [conversation]);
-
-
 
   return (
     <div className={style.mainCard}>
@@ -162,15 +158,24 @@ useEffect(() => {
                     <div>
                       <span onClick={() => handleCopy(item.text)}>
                         {" "}
-                        <IconButton>
+                        <IconButton style={{ color: "white" }}>
                           <ContentCopyIcon />
                         </IconButton>
                       </span>
                       <span>
                         {" "}
                         <ClickAwayListener onClickAway={handleMenuClose}>
-                          <IconButton onClick={handleMenuOpen} ref={anchorEl}>
+                          <IconButton
+                            onClick={handleMenuOpen}
+                            ref={anchorEl}
+                            style={{ color: "white" }}
+                          >
                             <ShareIcon />
+                            <style>{`
+        IconButton:hover {
+          color: #ff0000; /* change this to the desired hover color */
+        }
+      `}</style>
                           </IconButton>
                         </ClickAwayListener>{" "}
                         <Menu
@@ -180,7 +185,7 @@ useEffect(() => {
                           onClose={handleMenuClose}
                         >
                           <MenuItem
-                            onClick={() => handleFacebookShare(item.text)}
+                            onClick={() => handleClick(item.text)}
                           >
                             Share on Facebook
                           </MenuItem>
@@ -207,7 +212,8 @@ useEffect(() => {
       <div className={style.submitQuestion}>
         <input
           type="text"
-          placeholder="Type your question here" disabled={isDisabled}
+          placeholder="Type your question here"
+          disabled={isDisabled}
           value={userQuestion}
           className={style.inputQuestion}
           onKeyDown={(e) => {
