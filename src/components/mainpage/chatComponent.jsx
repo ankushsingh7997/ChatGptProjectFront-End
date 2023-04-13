@@ -27,6 +27,7 @@ function ChatComponent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const anchorEl = useRef(null);
   const useChatLog=useRecoilValue(chatLogView)
+  const [isDisabled, setIsDisabled] = useState(false);
 
   // share option methods
   const handleMenuOpen = () => {
@@ -38,6 +39,7 @@ function ChatComponent() {
   };
 
   async function handleQuestion() {
+    setIsDisabled(true)
     if (userQuestion.trim() != "") {
       let question = userQuestion;
       setUserQuestion("");
@@ -64,7 +66,7 @@ function ChatComponent() {
       if (!result.status) {
         // need to add error here
       } else {
-        console.log(result.message)
+        
         setConversation([
           conversation.push({ user: "bot", text: result.message }),
           ...conversation,
@@ -81,8 +83,8 @@ function ChatComponent() {
         ]);
 
         
+        setIsDisabled(false)
         
-        console.log(conversation)
       }
     }
   }
@@ -205,7 +207,7 @@ useEffect(() => {
       <div className={style.submitQuestion}>
         <input
           type="text"
-          placeholder="Type your question here"
+          placeholder="Type your question here" disabled={isDisabled}
           value={userQuestion}
           className={style.inputQuestion}
           onKeyDown={(e) => {
