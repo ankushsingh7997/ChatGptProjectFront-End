@@ -5,7 +5,6 @@
 }
 
 .mainContainer {
-  /* border:1px solid red; */
   position: absolute;
   top: 0;
   left: 0;
@@ -159,9 +158,16 @@ div.question:hover {
   height: 100%;
   background-color: #282c34;
   background-image: url('../assets/loginBackground.jpg');
+  background-size: cover;
+    background-position: center;
+ 
   color: #fff;
   padding: 20px;
 }
+hr {
+  border-color: #061930 ;
+}
+
 
 .chatCard {
   display: flex;

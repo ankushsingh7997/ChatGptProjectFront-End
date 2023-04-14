@@ -2,9 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import style from "../../componentcss/Mainpage.module.css";
 import { userId, userChat } from "../../recoil/atom";
 import { useRecoilState, useRecoilValue } from "recoil";
-import PersonIcon from "@mui/icons-material/Person";
-import SmartToyIcon from "@mui/icons-material/SmartToy";
-import { Icon } from "@mui/material";
+// import { Icon } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import Button from "@mui/material/Button";
 import ShareIcon from "@mui/icons-material/Share";
@@ -14,7 +12,7 @@ import ClickAwayListener from "@mui/material/ClickAwayListener";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { FacebookShareButton } from "react-share";
+// import { FacebookShareButton } from "react-share";
 import { chatLogView ,userprofileData} from "../../recoil/atom";
 import Avatar from "@mui/material/Avatar";
 
@@ -94,23 +92,24 @@ function ChatComponent() {
 
     // here in then  i  have to add code to show that text is successfully copied
   };
-  const handleFacebookShare = (text) => {
-    console.log("am i here");
-    return (
-      <FacebookShareButton quote={text} hashtag={"#chatBot"}>
-        share on facebook
-      </FacebookShareButton>
-    );
-  };
+  // const handleFacebookShare = (text) => {
+  //   console.log("am i here");
+  //   return (
+  //     <FacebookShareButton quote={text} hashtag={"#chatBot"}>
+  //       share on facebook
+  //     </FacebookShareButton>
+  //   );
+  // };
   const handleClick = (text) => {
-    const textToShare = text;
-    const facebookShareButton = handleFacebookShare(textToShare);
+    // const textToShare = text;
+    // const facebookShareButton = handleFacebookShare(textToShare);
     
-    console.log("Clicked!");
+    alert('this feature is yet to come')
+    
   };
 
-  const handleTwitterShare = (text) => {};
-  const handleLinkedinShare = (text) => {};
+  const handleTwitterShare = (text) => { alert('this feature is yet to come')};
+  const handleLinkedinShare = (text) => { alert('this feature is yet to come')};
 
   // set chat from logs
 

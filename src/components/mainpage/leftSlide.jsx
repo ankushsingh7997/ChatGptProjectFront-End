@@ -117,7 +117,7 @@ function LeftSlide() {
       >
         <label className={style.deleteconvoButton}>delete conversation</label>
       </button>
-      <hr></hr>
+      <hr className={style.hr}></hr>
       <div className={style.card}>
         <Profile />
       </div>
