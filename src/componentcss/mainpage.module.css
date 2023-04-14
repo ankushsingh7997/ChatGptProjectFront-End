@@ -26,11 +26,7 @@
 
   background-color: #212121;
 }
-/* .mainCard
-{
-    border: 1px solid white;
-    width:80%
-} */
+
 li {
   list-style-type: none;
   margin-bottom: 10px;
@@ -98,15 +94,7 @@ li {
 }
 .deleteconvoButton
 {
-  /* display: flex;
-  align-items: center;
-  justify-content: center;
- 
-  background: #6b7280;
-  min-width: 9rem;
-  width: 80%;
-  height: 100%;
-  border-radius: 10px; */
+  
   background-color: #0070f3;
     color: #fff;
      width:350px;
@@ -194,8 +182,7 @@ hr {
   width: 100%;
   flex-direction: column;
   align-items: center;
-  /* justify-content: space-between; */
-  /* background-color: rgb(16, 48, 136); */
+  
   background-color: #29292b;
   margin-top: 20px;
   padding: 10px;
@@ -213,7 +200,7 @@ hr {
   
   display: flex;
   align-items: flex-start;
-  /* flex-direction: column; */
+  
   width: 70%;
 }
 

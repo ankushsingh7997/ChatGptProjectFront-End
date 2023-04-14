@@ -1,11 +1,11 @@
 /* Set up a CSS variable to use for the background color */
-:root {
+/* :root {
     --primary-bg-color: #d4e4f7;
     --secondary-bg-color: #fff;
     background-image: url('../assets/leftLogin.jpg');
     
     
-  }
+  } */
   
   /* Add a background image to the page */
   /* body {
@@ -16,6 +16,14 @@
   } */
   
   /* Style the container for the content */
+  body{
+    
+    
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    
+  }
   .bodyContainer
   {
     
