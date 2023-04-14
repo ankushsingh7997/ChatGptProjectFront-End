@@ -1,5 +1,4 @@
-import style from "../../componentcss/Mainpage.module.css";
-
+import style from "../../componentcss/Mainpage.module.css"
 import LeftSlide from "./leftSlide";
 import ChatComponent from "./chatComponent";
 import { chatVisibility,editProfileVisibility } from "../../recoil/atom";
