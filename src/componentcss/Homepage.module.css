@@ -2,6 +2,8 @@
 :root {
     --primary-bg-color: #d4e4f7;
     --secondary-bg-color: #fff;
+    background-image: url('../assets/leftLogin.jpg');
+    
     
   }
   
@@ -14,17 +16,58 @@
   } */
   
   /* Style the container for the content */
-  .homepage_container {
+  .bodyContainer
+  {
+    
+   
+  height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+
+  }
+  .homepage_container1 {
+
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    background-color: #292d32;
-    outline: 2px solid #fff;
-    padding: 4rem 2rem;
+    /* border: none; */
+    height: 100vh;
+    width:50%;
+    background-image: url('assets/../../assets/leftLogin.jpg');
+    background-size: cover;
+    background-position: center;
+    /* background-image: url('assets/../../assets/background.jpg'); */
+    
+    /* background-color: #292d32; */
+    /* outline: 2px solid #fff; */
+    
+    /* padding: 4rem 2rem; */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    
+  }
+  .homepage_container2 {
+  padding:3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("../assets/futureChat.jpg");
+    background-size: cover;
+    background-position: center;
+    
+    
+    height: 100vh;
+    width:50%;
+    /* background-color: #292d32; */
+    
+    /* outline: 2px solid #fff; */
+    /* padding: 4rem 2rem; */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    
   }
   
   /* Style the heading */
@@ -41,6 +84,7 @@
   .homepage_links {
     display: flex;
     align-items: center;
+    flex-direction: column;
     margin-bottom: 2rem;
   }
   
@@ -94,5 +138,31 @@
   
   .homepage_links a:hover::before {
     opacity: 1;
+  }
+  .white
+  {
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: #fff;
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.2);
+    animation: glowing 2s ease-in-out infinite
+   
+  }
+  
+  .myRegister {
+    background-color: #0070f3;
+    color: #fff;
+     width:350px;
+    border-radius: 55px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 21px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .myRegister:hover {
+    background-color: #0058c0;
   }
   

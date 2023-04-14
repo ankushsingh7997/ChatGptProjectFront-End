@@ -15,10 +15,12 @@ import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { FacebookShareButton } from "react-share";
-import { chatLogView } from "../../recoil/atom";
+import { chatLogView ,userprofileData} from "../../recoil/atom";
+import Avatar from "@mui/material/Avatar";
 
 function ChatComponent() {
   const [userChatLog, setUserChat] = useRecoilState(userChat);
+  const [userData, setUserData] = useRecoilState(userprofileData);
 
   const userid = useRecoilValue(userId);
   const [userQuestion, setUserQuestion] = useState("");
@@ -133,10 +135,13 @@ function ChatComponent() {
                 <div key={index} className={style.conversationOuther}>
                   <div className={style.conversation}>
                     <li className={style.userChat}>
-                      <Icon>
-                        <PersonIcon></PersonIcon>
-                      </Icon>
-                      {" : "}
+                      
+                      <Avatar
+            src={userData.profileImage}
+            
+            alt="image"
+          ></Avatar>
+                      
                       {item.text}
                     </li>
                   </div>
@@ -148,10 +153,12 @@ function ChatComponent() {
                   <div className={style.convoAndLogo}>
                     <div className={style.conversation}>
                       <li className={style.BotReply}>
-                        <Icon>
-                          <SmartToyIcon></SmartToyIcon>
-                        </Icon>
-                        {" : "}
+                        
+                        <Avatar
+            src={'https://classroom-training-bucket.s3.ap-south-1.amazonaws.com/profileImage/alex-knight-2EJCSULRwC8-unsplash__1_-removebg-preview.png'}
+            
+          ></Avatar>
+                        
                         {item.text}
                       </li>
                     </div>

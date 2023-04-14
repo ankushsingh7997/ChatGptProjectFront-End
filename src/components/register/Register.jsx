@@ -9,10 +9,10 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 export default function Register() {
-  const [name, SetName] = useState();
+  const [name, SetName] = useState("");
 
-  const [email, SetEmail] = useState();
-  const [password, SetPassword] = useState();
+  const [email, SetEmail] = useState("");
+  const [password, SetPassword] = useState("");
   const [error, SetError] = useState("");
   const navigate = useNavigate();
 
@@ -51,13 +51,13 @@ export default function Register() {
               SetError("");
             }, 10000);
           }
-          console.log(result);
+         
           if (result.status) {
             Swal.fire("Registered successfully");
             SetName("");
             SetEmail("");
             SetPassword("");
-            navigate("/Login");
+            navigate("/");
           } //  SetError("registered successfully")
         } catch (error) {
           console.log(error);
@@ -81,13 +81,13 @@ export default function Register() {
 
           <section>
             <input
-              type={"text"}
+              type="text"
               value={name}
               placeholder="name"
               onChange={(e) => {
                 SetName(e.target.value);
               }}
-            ></input>
+            />
           </section>
 
           <section>
@@ -96,19 +96,19 @@ export default function Register() {
               value={email}
               placeholder="email"
               onChange={(e) => {
-                SetEmail(e.target.value.trim());
+                SetEmail(e.target.value);
               }}
-            ></input>
+            />
           </section>
           <section>
             <input
-              type={"password"}
+              type="password"
               value={password}
               placeholder="password"
               onChange={(e) => {
-                SetPassword(e.target.value.trim());
+                SetPassword(e.target.value);
               }}
-            ></input>
+            />
           </section>
 
           <section>

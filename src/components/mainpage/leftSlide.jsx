@@ -22,7 +22,7 @@ function LeftSlide() {
 
   useEffect(() => {
     if (localStorage.getItem("login") == "false") {
-      navigate("/Login");
+      navigate("/");
     }
 
     (async () => {
@@ -91,8 +91,8 @@ function LeftSlide() {
           userData.map((item) => (
             <li key={item.uniqueKey}>
               <div className={style.question}>
-                <span>
-                  {" "}
+                <span className={style.chatBubble}>
+                  
                   <Icon>
                     <ChatBubbleOutlineOutlinedIcon />
                   </Icon>

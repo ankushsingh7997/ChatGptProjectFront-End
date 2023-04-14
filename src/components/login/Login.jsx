@@ -8,8 +8,8 @@ import { useNavigate } from "react-router-dom";
 import { userId } from "../../recoil/atom";
 
 export default function Login() {
-  const [email, SetEmail] = useState();
-  const [password, SetPassword] = useState();
+  const [email, SetEmail] = useState("");
+  const [password, SetPassword] = useState("");
   const [error, SetError] = useState("");
 
   // to set recoil
@@ -62,23 +62,23 @@ export default function Login() {
         </section>
         <section>
           <input
-            type={"email"}
+            type="email"
             value={email}
             placeholder="email"
             onChange={(e) => {
-              SetEmail(e.target.value.trim());
+              SetEmail(e.target.value);
             }}
-          ></input>
+          />
         </section>
         <section>
           <input
-            type={"password"}
+            type="password"
             value={password}
             placeholder="password"
             onChange={(e) => {
-              SetPassword(e.target.value.trim());
+              SetPassword(e.target.value);
             }}
-          ></input>
+          />
         </section>
         <section>
           <button className={style.loginButton} onClick={HandleSubmit}>

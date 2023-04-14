@@ -42,14 +42,14 @@ function Profile() {
           ></Avatar>
         ) : (
           <Avatar
-            src="/broken-image.jpg"
+            src={'https://classroom-training-bucket.s3.ap-south-1.amazonaws.com/profileImage/alex-knight-2EJCSULRwC8-unsplash__1_-removebg-preview.png'}
             sx={{ width: 120, height: 116, fontSize: "5rem" }}
           ></Avatar>
         )}
       </div>
-      <div className={style.userName}>{userData.name}</div>
+      <div className={style.userName}><div className={style.name}>{userData.name}</div></div>
 
-      
+      ///broken-image.jpg
 
       
       <div className={style.logout} onClick={handleLogout}>

@@ -35,9 +35,7 @@ function EditProfile() {
   async function handleChange(e) {
     setImage(profileImage);
     setFile(e.target.files[0]);
-    console.log(e.target.files[0]);
-    console.log(file);
-
+    
     if (file) {
       let reader = new FileReader();
       reader.readAsDataURL(file);
@@ -114,7 +112,7 @@ function EditProfile() {
             ></Avatar>
           ) : (
             <Avatar
-              src="/broken-image.jpg"
+              src="https://classroom-training-bucket.s3.ap-south-1.amazonaws.com/profileImage/alex-knight-2EJCSULRwC8-unsplash__1_-removebg-preview.png"
               sx={{ width: 220, height: 216, fontSize: "5rem" }}
             ></Avatar>
           )}
@@ -137,7 +135,7 @@ function EditProfile() {
               type="text"
               placeholder="enter your name"
               onChange={(e) => setEditName(e.target.value)}
-            ></input>
+            />
           </div>
         ) : (
           ""
