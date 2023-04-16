@@ -5,7 +5,7 @@ import ChatComponent from "./chatComponent";
 import { chatVisibility, editProfileVisibility } from "../../recoil/atom";
 import { useRecoilState, useRecoilValue } from "recoil";
 import EditProfile from "./profileUpdate";
-import { useState } from "react";
+
 function Mainpage() {
 const visible = useRecoilValue(chatVisibility);
 const profileVisible = useRecoilValue(editProfileVisibility);

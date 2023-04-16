@@ -9,8 +9,7 @@ export const isValidEmail = function (email) {
     var strongRegex = new RegExp(
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,15}$/
     );
-    /*at least 1 lowercase, at least 1 uppercase,contain at least 1 numeric character,
-        at least one special character, range between 8-15*/
+    
     return strongRegex.test(password);
   };
   

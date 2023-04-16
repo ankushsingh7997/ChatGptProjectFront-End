@@ -208,8 +208,7 @@ function EditProfile() {
               ) : (
                 ""
               )}
-              {/* </div>
-        <div> */}
+              
               {editEmailVisiblity ? (
                 <div>
                   <input
@@ -250,8 +249,7 @@ function EditProfile() {
               ) : (
                 ""
               )}
-              {/* </div>
-        <div> */}
+             
               {editPhoneVisiblity ? (
                 <div>
                   <input

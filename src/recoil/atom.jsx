@@ -13,10 +13,7 @@ export const userprofileData = atom({
   key: "userprofileData",
   default: {},
 });
-// export const chattingboxx=atom({
-//   key:"chattingboxx",
-//   default:[]
-// })
+
 export const chatVisibility=atom({
   key:"chatVisibility",
   default:true
