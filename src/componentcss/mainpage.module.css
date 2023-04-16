@@ -35,29 +35,10 @@
     border:1px solid red;
     display: none;
   }
-  /* .slideCard
-  {
-    border:1px solid red;
-    display: none;
-  } */
+  
 
 
-/* .openMenu
-{
-  color:white;
-  z-Index:999;
-  font-Size:2rem;
-  display: block;
-}
-.closeMenu
-{
-  
-  
-  color:white;
-  z-Index:999;
-  font-Size:2rem;
-  display: block;
-}  */
+
 .myleftslide
 {
   border:10px solid red;
@@ -68,15 +49,15 @@
 
   .mainCard
   {
-    /* border:1px solid cyan; */
+    
     min-width: 22rem;
-    /* margin-left: 0.2rem; */
+    
     max-width: 100%;
     
   }
   body
 {
-  /* background-color: red; */
+  
   
   
   display: flex;
@@ -89,8 +70,7 @@
 }
   
   .mainContainer {
-    /* border:1px solid red; */
-    /* padding-left: 2rem; */
+   
     display: flex;
     
     
@@ -136,8 +116,7 @@
   width: 100%;
 }
 .slideCard {
-  /* border:1px solid#f3f4f6; */
-  /* border:1px solid red; */
+  
   background-color: black;
 
   min-width: 12rem;
@@ -159,30 +138,29 @@ li {
   overflow-x: hidden;
 }
 ::-webkit-scrollbar {
-  width: 8px; /* width of the scrollbar */
+  width: 8px; 
 }
 
-/* Style the thumb */
 ::-webkit-scrollbar-thumb {
-  background: #6b7280; /* color of the thumb */
-  border-radius: 5px; /* rounded corners */
+  background: #6b7280; 
+  border-radius: 5px; 
 }
 
-/* Style the track */
+
 ::-webkit-scrollbar-track {
-  background: #f3f4f6; /* color of the track */
+  background: #f3f4f6; 
 }
 
-/* Hide scrollbar buttons */
+
 ::-webkit-scrollbar-button {
   display: none;
 }
-/* Show scrollbar on hover */
+
 ::-webkit-scrollbar:hover {
   width: 16px;
 }
 
-/* Hide scrollbar when not hovering */
+
 ::-webkit-scrollbar:not(:hover) {
   width: 8px;
 }
@@ -210,7 +188,7 @@ li {
 
   width: 100%;
   height: 7%;
-  /* border-radius: 55px; */
+  
 }
 .deleteconvoButton
 {
@@ -255,7 +233,7 @@ div.question:hover {
     text-shadow: 0px 0px 1px #fff;
   }
 }
-/* chat section */
+
 .mainCard {
   
   display: flex;
@@ -264,7 +242,7 @@ div.question:hover {
   justify-content: center;
   width: 80%;
   height: 100%;
-  /* background-color: #282c34; */
+  
   background-image: url('../assets/loginBackground.jpg');
   background-size: cover;
     background-position: center;
@@ -295,7 +273,7 @@ hr {
   overflow-x: hidden;
   overflow-wrap: break-word;
 }
-/* ------------------------------------------------------------here */
+
 .conversationOuther {
   
   display: flex;
@@ -384,7 +362,7 @@ hr {
   background-color: #0058c0;
 }
 
-/* profile section */
+
 .card {
   height: 50%;
 }
@@ -409,7 +387,7 @@ hr {
   height: 50%;
 }
 .image {
-  /* border:1px solid cyan; */
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -433,7 +411,7 @@ hr {
 }
 .name
 {
-  /* border:1px solid cyan; */
+  
   height:80%;
 }
 .restBox {
@@ -453,25 +431,25 @@ hr {
 color: #fff;
   align-items: center;
   text-align: center;
-  /* border: 1px solid cyan; */
+  
 
   width: 50%;
   height: 13%;
-  /* border:none; */
+  
   border-radius: 5px;
 }
 .logout:hover {
   background-color: #282c34
 }
 .optional {
-  /* border:1px solid cyan; */
+  
   color:#fff;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
 
-  /* border:none; */
+  
   border-radius: 5px;
 
   width: 50%;
@@ -508,7 +486,7 @@ color: #fff;
   width: 50%;
   height: 95%;
   white-space: nowrap;
-  /* max-width: 100%; set the maximum width to 100% */
+ 
 }
 
 
@@ -534,7 +512,7 @@ color: #fff;
 .profileUpdateMainContainers
 {
   
-  /* border: 1px solid red; */
+
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -545,7 +523,7 @@ color: #fff;
 .profileUpdateimageContainers
 {
   
-  /* border:1px solid cyan; */
+ 
   
   display: flex;
   flex-direction: column;
@@ -554,9 +532,7 @@ color: #fff;
 }
 .editDataCard
 {
-  /* border:1px solid red; */
-  /* min-width: 500px; */
-  /* border:1px solid red; */
+  
   display: flex;
   flex-direction: column;
    gap:1rem;
@@ -576,11 +552,11 @@ color: #fff;
   height: 90%;
   margin-bottom: 1.5rem;
   padding:1px;
-  /* border:1px solid red; */
+  
 }
 
 .ProfilemainCard {
-  /* border:1px solid red; */
+  
   
   display: flex;
   flex-direction: column;
@@ -601,16 +577,14 @@ color: #fff;
 }
 
 .icon:hover{
-  /* border:1px solid red; */
+ 
   color: #0058c0;
   
 }
 .username
 {
 
- /* border:1px solid cyan; */
-  /* margin-right:2rem; */
-  /* color:red; */
+
   display: flex;
   justify-content: center ;
   align-items: center;
@@ -628,7 +602,7 @@ color: #fff;
 }
 .editUserName
 {
-  /* border:1px solid red; */
+ 
  
  font-size: 1.5rem;
 
@@ -640,8 +614,7 @@ color: #fff;
 
 .updateCancleButton
 {
-  /* background-color: #6b7280; */
-  /* border:1px solid red; */
+
   display: flex;
   justify-content: space-evenly;
 
@@ -657,13 +630,13 @@ color: #fff;
 
 .editInput
   {
-   /* border:1px solid cyan; */
+   
     width: 80%;
     height: 20px;
-    /* padding: 10px; */
+   
     border-radius: 5px;
-    /* border: 1px solid #41464c; */
-    /* margin-top: 20px; */
+   
+    
     font-size: 14px;
     color: #fff;
     background-color: #41464c;
@@ -710,7 +683,7 @@ color: #fff;
   @media  screen  and (max-width: 1216px) {
     .editUserName
     {
-      /* border:1px solid red; */
+      
      
      font-size: 1.3rem;
     
@@ -720,7 +693,7 @@ color: #fff;
   @media  screen  and (max-width: 1050px) {
     .editUserName
     {
-      /* border:1px solid red; */
+     
      
      font-size: 1rem;
     

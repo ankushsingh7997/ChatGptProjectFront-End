@@ -8,6 +8,8 @@ import { userChat, userId, userprofileData ,chatVisibility,editProfileVisibility
 import { useNavigate } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import { chatLogView } from "../../recoil/atom";
+import {CgProfile} from 'react-icons/cg';
+
 function Profile() {
   const [userData, setUserData] = useRecoilState(userprofileData);
   const chat = useSetRecoilState(userChat);
@@ -59,10 +61,10 @@ function Profile() {
         <label>Logout</label>
       </div>
       <div className={style.optional} onClick={()=>{setChatVisible(false);setEditProfileVisibile(true)}}>
-        <Icon>
-          <AcUnitIcon></AcUnitIcon>
-        </Icon>{" "}
-        <label>update</label>
+        {/* <Icon> */}
+          <CgProfile style={{fontSize:'1.5rem'}}/>
+        {/* </Icon>{" "} */}
+        <label>Profile</label>
       </div>
 
       {/* </div> */}

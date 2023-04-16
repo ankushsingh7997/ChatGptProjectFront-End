@@ -62,7 +62,7 @@ function LeftSlide() {
     ]);
   };
   const handleDeleteConversation = async () => {
-    console.log(userData);
+    
     if (userData.length != 0) {
       let result = await fetch(
         `https://chatgpt3-ujj0.onrender.com/deleteAllChat/${userid}`,

@@ -45,8 +45,6 @@ function EditProfile() {
   const [editPhoneVisiblity, setEditPhoneVisiblity] = useState(false);
   const [phoneVisiblity, setPhoneVisiblity] = useState(true);
 
-  console.log(userData);
-
   //-----------------------------upload
   const [image, setImage] = useState(null);
   const inputRef = useRef(null);
@@ -100,7 +98,7 @@ function EditProfile() {
 
       if (responseData.status) {
         setUserData({ ...userData, ...responseData.data.data });
-        
+
         setImage("");
 
         Swal.fire(responseData.data.message);
@@ -109,9 +107,9 @@ function EditProfile() {
         setImage("");
         setEditName("");
       }
-      if (!responseData.data.status) {
+      if (!responseData.response.data.status) {
         // show and handle error
-        Swal.fire("please check your data");
+        Swal.fire(responseData.response.data.message);
       }
     } else {
       Swal.fire("please select some file to upload");

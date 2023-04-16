@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { isValidEmail } from "../../validations/validation";
 import style from "../../componentcss/Login.module.css";
-// import { userId } from "../recoil/atom";
 import { useSetRecoilState } from "recoil";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";

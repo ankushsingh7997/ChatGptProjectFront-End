@@ -10,9 +10,6 @@ function Mainpage() {
 const visible = useRecoilValue(chatVisibility);
 const profileVisible = useRecoilValue(editProfileVisibility);
 
-
-  
-
   return (
     <div className={style.mainContainer}>
       

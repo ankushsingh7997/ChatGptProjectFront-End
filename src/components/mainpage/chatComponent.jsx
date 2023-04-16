@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import style from "../../componentcss/Mainpage.module.css";
 import { userId, userChat } from "../../recoil/atom";
 import { useRecoilState, useRecoilValue } from "recoil";
-// import { Icon } from "@mui/material";
+
 import SendIcon from "@mui/icons-material/Send";
 import Button from "@mui/material/Button";
 import ShareIcon from "@mui/icons-material/Share";
@@ -217,7 +217,6 @@ function ChatComponent() {
       <div className={style.submitQuestion}>
         <input
           type="text"
-          autocomplete="off"
           placeholder="Type your question here"
           disabled={isDisabled}
           value={userQuestion}
