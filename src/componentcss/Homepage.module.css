@@ -1,19 +1,4 @@
-/* Set up a CSS variable to use for the background color */
-/* :root {
-    --primary-bg-color: #d4e4f7;
-    --secondary-bg-color: #fff;
-    background-image: url('../assets/leftLogin.jpg');
-    
-    
-  } */
-  
-  /* Add a background image to the page */
-  /* body {
-    background-image: url("https://images.unsplash.com/photo-1504489659614-4a4e8eeb64c6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzB8fGJlYWNofGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"); 
-    background-size: cover;
-    font-family: Arial, sans-serif;
-    height: 100vh;
-  } */
+
   
   /* Style the container for the content */
   body{
@@ -21,7 +6,7 @@
     
     background-color: black;
     background-size: cover;
-    background-position: center;
+    /* background-position: center; */
     
   }
   .bodyContainer
@@ -32,8 +17,51 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
    
 
+  }
+  .getStarted
+  {
+    display: none;
+  }
+  @media only screen and (max-width: 700px) {
+  
+    .bodyContainer
+    {
+      
+     
+    height:100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column-reverse;
+      align-items: center;
+     
+      width: 100%;
+      
+     overflow-y: scroll;
+     background-color: black;
+  
+    }
+    .getStarted
+  {
+    display: block;
+    margin-top: 80vh;
+    background-color: cyan;
+    
+  }
+    .homepage_container2
+    {
+      width: 100vw;
+      
+      margin-top: 100vh;
+      display: flex;
+     
+
+      
+      
+    }
+  
   }
   .homepage_container1 {
 

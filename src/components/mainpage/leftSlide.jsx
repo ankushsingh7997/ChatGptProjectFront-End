@@ -8,7 +8,7 @@ import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutline
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import Icon from "@mui/material/Icon";
 import Profile from "./profileCart";
-import { chatLogView } from "../../recoil/atom";
+import { chatLogView ,leftSlideVisivility} from "../../recoil/atom";
 import Swal from "sweetalert2";
 
 function LeftSlide() {
@@ -19,6 +19,7 @@ function LeftSlide() {
   const setUserProfile = useSetRecoilState(userprofileData);
   const navigate = useNavigate();
   const setChatLog = useSetRecoilState(chatLogView);
+ 
 
   useEffect(() => {
     if (localStorage.getItem("login") == "false") {
@@ -26,7 +27,7 @@ function LeftSlide() {
     }
 
     (async () => {
-      await fetch(`http://localhost:4000/fetchuser/${userid}`)
+      await fetch(`https://chatgpt3-ujj0.onrender.com/fetchuser/${userid}`)
         .then((res) => res.json())
         .then((data) => {
           setUserData(data.chatLogs.questions);
@@ -37,7 +38,7 @@ function LeftSlide() {
 
   async function handleDelete(uniqueKey) {
     let result = await fetch(
-      `http://localhost:4000/deleteChat/${userid}/${uniqueKey}`,
+      `https://chatgpt3-ujj0.onrender.com/deleteChat/${userid}/${uniqueKey}`,
       {
         method: "DELETE",
         headers: {
@@ -64,7 +65,7 @@ function LeftSlide() {
     console.log(userData);
     if (userData.length != 0) {
       let result = await fetch(
-        `http://localhost:4000/deleteAllChat/${userid}`,
+        `https://chatgpt3-ujj0.onrender.com/deleteAllChat/${userid}`,
         {
           method: "DELETE",
           headers: {
@@ -84,7 +85,8 @@ function LeftSlide() {
   };
 
   return (
-    <div className={style.slideCard}>
+     <div className={style.slideCard}>
+      
       <ul className={style.myList}>
         <h3>chat logs</h3>
         {userData &&
@@ -122,6 +124,7 @@ function LeftSlide() {
         <Profile />
       </div>
     </div>
+          
   );
 }
 

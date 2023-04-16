@@ -14,20 +14,38 @@ import FileUploadIcon from "@mui/icons-material/FileUpload";
 import Swal from "sweetalert2";
 import axios from "axios";
 import Button from "@mui/material/Button";
-import BorderColorIcon from '@mui/icons-material/BorderColor';
+import BorderColorIcon from "@mui/icons-material/BorderColor";
 
 function EditProfile() {
   const [userData, setUserData] = useRecoilState(userprofileData);
   const [profileImage, setprofileImage] = useState(userData.profileImage);
-  const [profileName, setprofileName] = useState(userData.name);
+
   const [userid, setUserId] = useRecoilState(userId);
   const [chatVisible, setChatVisible] = useRecoilState(chatVisibility);
   const [editProfileVisibile, setEditProfileVisibile] = useRecoilState(
     editProfileVisibility
   );
   const [file, setFile] = useState(null);
+  //name
+  const [profileName, setprofileName] = useState(userData.name);
   const [editName, setEditName] = useState("");
   const [editNameVisiblity, setEditNameVisiblity] = useState(false);
+  const [nameVisiblity, setNameVisiblity] = useState(true);
+  //-----------------------------------------------
+  //email
+  const [email, setEmail] = useState(userData.email);
+  const [editEmail, setEditEmail] = useState("");
+  const [editEmailVisiblity, setEditEmailVisiblity] = useState(false);
+  const [emailVisiblity, setEmailVisiblity] = useState(true);
+  //---------------------------------------------------
+
+  // ----------------
+  const [phone, setPhone] = useState(userData.phone);
+  const [editPhone, setEditPhone] = useState("");
+  const [editPhoneVisiblity, setEditPhoneVisiblity] = useState(false);
+  const [phoneVisiblity, setPhoneVisiblity] = useState(true);
+
+  console.log(userData);
 
   //-----------------------------upload
   const [image, setImage] = useState(null);
@@ -35,7 +53,7 @@ function EditProfile() {
   async function handleChange(e) {
     setImage(profileImage);
     setFile(e.target.files[0]);
-    
+
     if (file) {
       let reader = new FileReader();
       reader.readAsDataURL(file);
@@ -49,13 +67,19 @@ function EditProfile() {
   }
 
   const handleUpdate = async () => {
-    if (file||editName!='') {
+    if (file || editName != "" || editEmail != "" || editPhone != "") {
       const formData = new FormData();
-      if(file){
-      formData.append("image", file, file.name);
+      if (file) {
+        formData.append("image", file, file.name);
       }
       if (editName !== "") {
         formData.append("name", editName);
+      }
+      if (editEmail !== "") {
+        formData.append("email", editEmail);
+      }
+      if (editPhone !== "") {
+        formData.append("phone", editPhone);
       }
 
       const config = {
@@ -66,7 +90,11 @@ function EditProfile() {
       };
 
       let responseData = await axios
-        .put(`http://localhost:4000/user/${userid}/update`, formData, config)
+        .put(
+          `https://chatgpt3-ujj0.onrender.com/user/${userid}/update`,
+          formData,
+          config
+        )
         .then((response) => response)
         .catch((error) => error);
 
@@ -103,54 +131,157 @@ function EditProfile() {
   return (
     <div className={style.ProfilemainCard}>
       <div className={style.profileEditCard}>
-        <div className={style.image2}>
-          {profileImage != "" ? (
-            <Avatar
-              src={profileImage}
-              sx={{ width: 220, height: 216, fontSize: "5rem" }}
-              alt="image"
-            ></Avatar>
-          ) : (
-            <Avatar
-              src="https://classroom-training-bucket.s3.ap-south-1.amazonaws.com/profileImage/alex-knight-2EJCSULRwC8-unsplash__1_-removebg-preview.png"
-              sx={{ width: 220, height: 216, fontSize: "5rem" }}
-            ></Avatar>
-          )}
-        </div>
-        <input type="file" hidden onChange={handleChange} ref={inputRef} />
-        <div onClick={handleClick} className={style.icon}>
-          
-          <label>upload image</label>
-          <Icon>
-            <FileUploadIcon />
-          </Icon>
-        </div>
-        <div className={style.userName}>
-          <label className={style.editUserName}>{profileName}</label>
-        </div>
-        {editNameVisiblity ? (
-          <div>
-            <input className={style.editInput}
-              value={editName}
-              type="text"
-              placeholder="enter your name"
-              onChange={(e) => setEditName(e.target.value)}
-            />
+        <div className={style.profileUpdateimageContainers}>
+          <div className={style.image2}>
+            {profileImage != "" ? (
+              <Avatar
+                src={profileImage}
+                sx={{ width: 220, height: 216, fontSize: "5rem" }}
+                alt="image"
+              ></Avatar>
+            ) : (
+              <Avatar
+                src="https://classroom-training-bucket.s3.ap-south-1.amazonaws.com/profileImage/alex-knight-2EJCSULRwC8-unsplash__1_-removebg-preview.png"
+                sx={{ width: 220, height: 216, fontSize: "5rem" }}
+              ></Avatar>
+            )}
           </div>
-        ) : (
-          ""
-        )}
-        <div
-          onClick={() => {
-            setEditNameVisiblity(editNameVisiblity ? false : true);
-          }}
-          className={style.icon}
-        >
-          
-          <label>edit name</label>
-          <Icon>
-            <EditIcon />
-          </Icon>
+          {/* ----------------------------------- */}
+          <div>
+            <input type="file" hidden onChange={handleChange} ref={inputRef} />
+            <div onClick={handleClick} className={style.icon}>
+              <label>upload image</label>
+              <Icon>
+                <FileUploadIcon />
+              </Icon>
+            </div>
+          </div>
+          {/* ------------------------------------------ */}
+        </div>
+
+        <div className={style.editDataCard}>
+          <div className={style.profileUpdateMainContainers}>
+            <div className={style.username}>
+              {nameVisiblity ? (
+                <div className={style.userName}>
+                  <label className={style.editUserName}>{profileName}</label>
+                </div>
+              ) : (
+                ""
+              )}
+
+              {editNameVisiblity ? (
+                <div>
+                  <input
+                    className={style.editInput}
+                    value={editName}
+                    type="text"
+                    placeholder="enter your name"
+                    onChange={(e) => setEditName(e.target.value)}
+                  />
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+
+            <div
+              onClick={() => {
+                setEditNameVisiblity(editNameVisiblity ? false : true);
+                setNameVisiblity(nameVisiblity ? false : true);
+              }}
+              className={style.icon}
+            >
+              <label>edit name</label>
+              <Icon>
+                <EditIcon />
+              </Icon>
+            </div>
+          </div>
+
+          {/* edit email */}
+
+          <div className={style.profileUpdateMainContainers}>
+            <div className={style.username}>
+              {emailVisiblity ? (
+                <div className={style.userName}>
+                  <label className={style.editUserName}>{email}</label>
+                </div>
+              ) : (
+                ""
+              )}
+              {/* </div>
+        <div> */}
+              {editEmailVisiblity ? (
+                <div>
+                  <input
+                    className={style.editInput}
+                    value={editEmail}
+                    type="text"
+                    placeholder="enter your email"
+                    onChange={(e) => setEditEmail(e.target.value)}
+                  />
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+
+            <div
+              onClick={() => {
+                setEditEmailVisiblity(editEmailVisiblity ? false : true);
+                setEmailVisiblity(emailVisiblity ? false : true);
+              }}
+              className={style.icon}
+            >
+              <label>edit email</label>
+              <Icon>
+                <EditIcon />
+              </Icon>
+            </div>
+          </div>
+
+          {/* edit phone number */}
+
+          <div className={style.profileUpdateMainContainers}>
+            <div className={style.username}>
+              {phoneVisiblity ? (
+                <div className={style.userName}>
+                  <label className={style.editUserName}>{phone}</label>
+                </div>
+              ) : (
+                ""
+              )}
+              {/* </div>
+        <div> */}
+              {editPhoneVisiblity ? (
+                <div>
+                  <input
+                    className={style.editInput}
+                    value={editPhone}
+                    type="text"
+                    placeholder="enter your phone number"
+                    onChange={(e) => setEditPhone(e.target.value)}
+                  />
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+
+            <div
+              onClick={() => {
+                setEditPhoneVisiblity(editPhoneVisiblity ? false : true);
+                setPhoneVisiblity(phoneVisiblity ? false : true);
+              }}
+              className={style.icon}
+            >
+              <label>edit phone</label>
+              <Icon>
+                <EditIcon />
+              </Icon>
+            </div>
+          </div>
         </div>
 
         <div className={style.updateCancleButton}>

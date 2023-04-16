@@ -26,7 +26,7 @@ export default function Login() {
     } else {
       let obj = { email, password };
 
-      let result = await fetch("http://localhost:4000/login", {
+      let result = await fetch("https://chatgpt3-ujj0.onrender.com/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -29,3 +29,17 @@ export const chatLogView=atom({
   key:"chatLogView",
   default:[]
 });
+
+export const openMenu=atom({
+  key:"openMenu",
+  default:true
+});
+export const closeMenu=atom({
+  key:"closeMenu",
+  default:false
+});
+
+export const leftSlideVisivility=atom({
+  key:"leftSlideVisivility",
+  default:true
+});

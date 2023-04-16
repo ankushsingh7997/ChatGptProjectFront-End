@@ -13,13 +13,14 @@ export default function Register() {
 
   const [email, SetEmail] = useState("");
   const [password, SetPassword] = useState("");
+  const [phone, SetPhone] = useState("");
   const [error, SetError] = useState("");
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    if (name && email && password) {
+    if (name && email && password &&phone) {
       if (!isValidEmail(email)) {
         SetError("enter a valid email");
         setInterval(() => {
@@ -32,10 +33,10 @@ export default function Register() {
         }, 10000);
       } else {
         try {
-          let item = { name, email, password };
+          let item = { name, email, password,phone };
           let dataa = JSON.stringify(item);
           console.log(JSON.stringify(item)); //--------------
-          let result = await fetch("http://localhost:4000/register", {
+          let result = await fetch("https://chatgpt3-ujj0.onrender.com/register", {
             method: "POST",
 
             headers: {
@@ -107,6 +108,16 @@ export default function Register() {
               placeholder="password"
               onChange={(e) => {
                 SetPassword(e.target.value);
+              }}
+            />
+          </section>
+          <section>
+            <input
+              type="text"
+              value={phone}
+              placeholder="phone"
+              onChange={(e) => {
+                SetPhone(e.target.value);
               }}
             />
           </section>

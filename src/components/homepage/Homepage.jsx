@@ -14,14 +14,16 @@ function Homepage() {
       
       
       
-      <div><Login/></div>
+      <div id="logi"><Login/></div>
       <div className={style.homepage_links}>
         <div className={style.white}>   Need  an account  </div>
         <div><button className={style.myRegister} onClick={()=>{navigate('/register')}}>Register</button></div>
         
       </div>
     </div>
-   <div className={style.homepage_container2}></div>
+   <div className={style.homepage_container2}>
+    <button className={style.getStarted}><a href="#logi"> lets get started</a></button>
+   </div>
     </div>
   
   );

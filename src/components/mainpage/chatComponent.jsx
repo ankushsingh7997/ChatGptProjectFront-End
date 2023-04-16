@@ -12,9 +12,10 @@ import ClickAwayListener from "@mui/material/ClickAwayListener";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-// import { FacebookShareButton } from "react-share";
+import { FacebookShareButton,FacebookIcon } from "react-share";
 import { chatLogView ,userprofileData} from "../../recoil/atom";
 import Avatar from "@mui/material/Avatar";
+
 
 function ChatComponent() {
   const [userChatLog, setUserChat] = useRecoilState(userChat);
@@ -28,6 +29,15 @@ function ChatComponent() {
   const anchorEl = useRef(null);
   const useChatLog = useRecoilValue(chatLogView);
   const [isDisabled, setIsDisabled] = useState(false);
+  const[openMenu,setOpenMenu]=useState(true);
+  const[closeMenu,setCloseMenu]=useState(false);
+
+
+
+
+
+
+
 
   // share option methods
   const handleMenuOpen = () => {
@@ -50,7 +60,7 @@ function ChatComponent() {
         ...conversation,
       ]);
 
-      let result = await fetch(`http://localhost:4000/ask/${userid}`, {
+      let result = await fetch(`https://chatgpt3-ujj0.onrender.com/ask/${userid}`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -92,19 +102,20 @@ function ChatComponent() {
 
     // here in then  i  have to add code to show that text is successfully copied
   };
-  // const handleFacebookShare = (text) => {
-  //   console.log("am i here");
-  //   return (
-  //     <FacebookShareButton quote={text} hashtag={"#chatBot"}>
-  //       share on facebook
-  //     </FacebookShareButton>
-  //   );
-  // };
+  const handleFacebookShare = (text) => {
+   
+    return (
+      <FacebookShareButton quote={text} hashtag={"#chatBot"}>
+        share on facebook
+      </FacebookShareButton>
+    );
+  };
   const handleClick = (text) => {
-    // const textToShare = text;
-    // const facebookShareButton = handleFacebookShare(textToShare);
     
-    alert('this feature is yet to come')
+    const textToShare = text;
+    const facebookShareButton = handleFacebookShare(textToShare);
+    
+    
     
   };
 
@@ -126,6 +137,8 @@ function ChatComponent() {
 
   return (
     <div className={style.mainCard}>
+     
+      
       <div className={style.chatCard}>
         <ul className={style.myChatList} ref={myChatRef}>
           {conversation.map((item, index) => {
@@ -190,10 +203,11 @@ function ChatComponent() {
                           // PaperProps={}
                           onClose={handleMenuClose}
                         >
-                          <MenuItem
-                            onClick={() => handleClick(item.text)}
-                          >
-                            Share on Facebook
+                          <MenuItem>
+                          <FacebookShareButton quote={item.text} url={"https://www.facebook.com"}>
+            <FacebookIcon size={32} round />
+          </FacebookShareButton>
+                            
                           </MenuItem>
                           <MenuItem
                             onClick={() => handleTwitterShare(item.text)}
@@ -218,6 +232,7 @@ function ChatComponent() {
       <div className={style.submitQuestion}>
         <input
           type="text"
+          autocomplete="off"
           placeholder="Type your question here"
           disabled={isDisabled}
           value={userQuestion}
