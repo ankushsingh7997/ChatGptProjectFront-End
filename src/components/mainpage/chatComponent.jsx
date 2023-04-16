@@ -102,22 +102,7 @@ function ChatComponent() {
 
     // here in then  i  have to add code to show that text is successfully copied
   };
-  const handleFacebookShare = (text) => {
-   
-    return (
-      <FacebookShareButton quote={text} hashtag={"#chatBot"}>
-        share on facebook
-      </FacebookShareButton>
-    );
-  };
-  const handleClick = (text) => {
-    
-    const textToShare = text;
-    const facebookShareButton = handleFacebookShare(textToShare);
-    
-    
-    
-  };
+
 
   const handleTwitterShare = (text) => { alert('this feature is yet to come')};
   const handleLinkedinShare = (text) => { alert('this feature is yet to come')};

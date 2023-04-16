@@ -689,18 +689,14 @@ color: #fff;
 {
 
  
-  /* margin-right:2rem; */
-  /* color:cyan; */
+  
   display: flex;
   justify-content: center ;
   align-items: center;
-  /* padding-left: 10px ;
-  padding-right: 10px ; */
-  /* letter-spacing: 1px; */
+ 
   background-color: #505055;
   border-radius: 5px ;
-  /* min-width: 300px; */
-  /* max-width: 100px; */
+  
   font-weight: 200;
   
  
