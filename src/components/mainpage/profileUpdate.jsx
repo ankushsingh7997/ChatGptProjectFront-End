@@ -14,7 +14,7 @@ import FileUploadIcon from "@mui/icons-material/FileUpload";
 import Swal from "sweetalert2";
 import axios from "axios";
 import Button from "@mui/material/Button";
-import BorderColorIcon from "@mui/icons-material/BorderColor";
+
 
 function EditProfile() {
   const [userData, setUserData] = useRecoilState(userprofileData);
@@ -100,7 +100,7 @@ function EditProfile() {
 
       if (responseData.status) {
         setUserData({ ...userData, ...responseData.data.data });
-        //  setprofileImage(responseData.data.data.profileImage);
+        
         setImage("");
 
         Swal.fire(responseData.data.message);
@@ -111,7 +111,7 @@ function EditProfile() {
       }
       if (!responseData.data.status) {
         // show and handle error
-        Swal.fire("please check your image");
+        Swal.fire("please check your data");
       }
     } else {
       Swal.fire("please select some file to upload");
