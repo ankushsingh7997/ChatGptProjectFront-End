@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import style from "../../componentcss/Mainpage.module.css";
+import style from './Mainpage.module.css'
 import { userId, userChat } from "../../recoil/atom";
 import { useRecoilState, useRecoilValue } from "recoil";
 

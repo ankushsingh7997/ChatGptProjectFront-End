@@ -1,5 +1,5 @@
 import React, { useState, useRef, useRecoilValue } from "react";
-import style from "../../componentcss/Mainpage.module.css";
+import style from './Mainpage.module.css'
 import { useRecoilState } from "recoil";
 import {
   userId,

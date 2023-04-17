@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../../componentcss/Mainpage.module.css";
+import style from './Mainpage.module.css'
 import LogoutIcon from "@mui/icons-material/Logout";
 import AcUnitIcon from "@mui/icons-material/AcUnit";
 import { Icon } from "@mui/material";
