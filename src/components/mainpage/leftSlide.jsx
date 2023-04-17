@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import style from './Mainpage.module.css'
+import style from './mainpagecss/Mainpage.module.css'
 import { userChat, userId, userprofileData } from "../../recoil/atom";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 
@@ -8,7 +8,7 @@ import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutline
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import Icon from "@mui/material/Icon";
 import Profile from "./profileCart";
-import { chatLogView ,leftSlideVisivility} from "../../recoil/atom";
+import { chatLogView, leftSlideVisivility } from "../../recoil/atom";
 import Swal from "sweetalert2";
 
 function LeftSlide() {
@@ -19,7 +19,6 @@ function LeftSlide() {
   const setUserProfile = useSetRecoilState(userprofileData);
   const navigate = useNavigate();
   const setChatLog = useSetRecoilState(chatLogView);
- 
 
   useEffect(() => {
     if (localStorage.getItem("login") == "false") {
@@ -62,7 +61,6 @@ function LeftSlide() {
     ]);
   };
   const handleDeleteConversation = async () => {
-    
     if (userData.length != 0) {
       let result = await fetch(
         `https://chatgpt3-ujj0.onrender.com/deleteAllChat/${userid}`,
@@ -85,8 +83,7 @@ function LeftSlide() {
   };
 
   return (
-     <div className={style.slideCard}>
-      
+    <div className={style.slideCard}>
       <ul className={style.myList}>
         <h3>chat logs</h3>
         {userData &&
@@ -94,7 +91,6 @@ function LeftSlide() {
             <li key={item.uniqueKey}>
               <div className={style.question}>
                 <span className={style.chatBubble}>
-                  
                   <Icon>
                     <ChatBubbleOutlineOutlinedIcon />
                   </Icon>
@@ -124,7 +120,6 @@ function LeftSlide() {
         <Profile />
       </div>
     </div>
-          
   );
 }
 

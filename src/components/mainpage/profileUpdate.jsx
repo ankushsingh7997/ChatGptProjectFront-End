@@ -1,5 +1,5 @@
 import React, { useState, useRef, useRecoilValue } from "react";
-import style from './Mainpage.module.css'
+import style from './mainpagecss/Mainpage.module.css'
 import { useRecoilState } from "recoil";
 import {
   userId,
@@ -14,7 +14,6 @@ import FileUploadIcon from "@mui/icons-material/FileUpload";
 import Swal from "sweetalert2";
 import axios from "axios";
 import Button from "@mui/material/Button";
-
 
 function EditProfile() {
   const [userData, setUserData] = useRecoilState(userprofileData);
@@ -208,7 +207,7 @@ function EditProfile() {
               ) : (
                 ""
               )}
-              
+
               {editEmailVisiblity ? (
                 <div>
                   <input
@@ -249,7 +248,7 @@ function EditProfile() {
               ) : (
                 ""
               )}
-             
+
               {editPhoneVisiblity ? (
                 <div>
                   <input

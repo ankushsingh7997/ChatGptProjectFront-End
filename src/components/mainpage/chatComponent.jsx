@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import style from './Mainpage.module.css'
+import style from './mainpagecss/Mainpage.module.css'
 import { userId, userChat } from "../../recoil/atom";
 import { useRecoilState, useRecoilValue } from "recoil";
 
@@ -12,10 +12,9 @@ import ClickAwayListener from "@mui/material/ClickAwayListener";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { FacebookShareButton,FacebookIcon } from "react-share";
-import { chatLogView ,userprofileData} from "../../recoil/atom";
+import { FacebookShareButton, FacebookIcon } from "react-share";
+import { chatLogView, userprofileData } from "../../recoil/atom";
 import Avatar from "@mui/material/Avatar";
-
 
 function ChatComponent() {
   const [userChatLog, setUserChat] = useRecoilState(userChat);
@@ -29,15 +28,8 @@ function ChatComponent() {
   const anchorEl = useRef(null);
   const useChatLog = useRecoilValue(chatLogView);
   const [isDisabled, setIsDisabled] = useState(false);
-  const[openMenu,setOpenMenu]=useState(true);
-  const[closeMenu,setCloseMenu]=useState(false);
-
-
-
-
-
-
-
+  const [openMenu, setOpenMenu] = useState(true);
+  const [closeMenu, setCloseMenu] = useState(false);
 
   // share option methods
   const handleMenuOpen = () => {
@@ -49,7 +41,6 @@ function ChatComponent() {
   };
 
   async function handleQuestion() {
-    
     if (userQuestion.trim() != "") {
       setIsDisabled(true);
       let question = userQuestion;
@@ -60,16 +51,19 @@ function ChatComponent() {
         ...conversation,
       ]);
 
-      let result = await fetch(`https://chatgpt3-ujj0.onrender.com/ask/${userid}`, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          message: `${question}`,
-        }),
-      })
+      let result = await fetch(
+        `https://chatgpt3-ujj0.onrender.com/ask/${userid}`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            message: `${question}`,
+          }),
+        }
+      )
         .then((response) => response.json())
         .then((res) => res);
 
@@ -103,9 +97,12 @@ function ChatComponent() {
     // here in then  i  have to add code to show that text is successfully copied
   };
 
-
-  const handleTwitterShare = (text) => { alert('this feature is yet to come')};
-  const handleLinkedinShare = (text) => { alert('this feature is yet to come')};
+  const handleTwitterShare = (text) => {
+    alert("this feature is yet to come");
+  };
+  const handleLinkedinShare = (text) => {
+    alert("this feature is yet to come");
+  };
 
   // set chat from logs
 
@@ -122,8 +119,6 @@ function ChatComponent() {
 
   return (
     <div className={style.mainCard}>
-     
-      
       <div className={style.chatCard}>
         <ul className={style.myChatList} ref={myChatRef}>
           {conversation.map((item, index) => {
@@ -132,13 +127,8 @@ function ChatComponent() {
                 <div key={index} className={style.conversationOuther}>
                   <div className={style.conversation}>
                     <li className={style.userChat}>
-                      
-                      <Avatar
-            src={userData.profileImage}
-            
-            alt="image"
-          ></Avatar>
-                      
+                      <Avatar src={userData.profileImage} alt="image"></Avatar>
+
                       {item.text}
                     </li>
                   </div>
@@ -150,12 +140,12 @@ function ChatComponent() {
                   <div className={style.convoAndLogo}>
                     <div className={style.conversation}>
                       <li className={style.BotReply}>
-                        
                         <Avatar
-            src={'https://classroom-training-bucket.s3.ap-south-1.amazonaws.com/profileImage/alex-knight-2EJCSULRwC8-unsplash__1_-removebg-preview.png'}
-            
-          ></Avatar>
-                        
+                          src={
+                            "https://classroom-training-bucket.s3.ap-south-1.amazonaws.com/profileImage/alex-knight-2EJCSULRwC8-unsplash__1_-removebg-preview.png"
+                          }
+                        ></Avatar>
+
                         {item.text}
                       </li>
                     </div>
@@ -189,10 +179,12 @@ function ChatComponent() {
                           onClose={handleMenuClose}
                         >
                           <MenuItem>
-                          <FacebookShareButton quote={item.text} url={"https://www.facebook.com"}>
-            <FacebookIcon size={32} round />
-          </FacebookShareButton>
-                            
+                            <FacebookShareButton
+                              quote={item.text}
+                              url={"https://www.facebook.com"}
+                            >
+                              <FacebookIcon size={32} round />
+                            </FacebookShareButton>
                           </MenuItem>
                           <MenuItem
                             onClick={() => handleTwitterShare(item.text)}
