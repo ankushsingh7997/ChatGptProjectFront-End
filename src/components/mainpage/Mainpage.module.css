@@ -3,22 +3,7 @@
   --light-gray: #d3d3d3;
   --color-span: #212121;
 }
-.openMenu
-{
-  color:white;
-  z-Index:999;
-  font-Size:2rem;
-  display: none;
-}
-.closeMenu
-{
-  
-  
-  color:white;
-  z-Index:999;
-  font-Size:2rem;
-  display: none;
-} 
+
 
 
  @media only screen and (max-width: 800px) {
