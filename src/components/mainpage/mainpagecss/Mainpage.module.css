@@ -68,6 +68,7 @@
     
   
     width: 100%;
+    overflow-y: scroll;
   }
 
 
@@ -517,7 +518,7 @@ color: #fff;
 
 .ProfilemainCard {
   
-  
+   
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -528,6 +529,7 @@ color: #fff;
   background-color: #282c34;
   color: #fff;
   padding: 20px;
+  
 }
 .icon{
  
