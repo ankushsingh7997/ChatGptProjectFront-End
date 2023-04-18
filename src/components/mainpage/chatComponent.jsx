@@ -147,19 +147,24 @@ function ChatComponent() {
                 <div key={index} className={style.conversationOuther}>
                   <div className={style.convoAndLogo}>
                     <div className={style.conversation}>
+                    <div>  
                       <li className={style.BotReply}>
                         <Avatar
                           src={
                             "https://classroom-training-bucket.s3.ap-south-1.amazonaws.com/profileImage/alex-knight-2EJCSULRwC8-unsplash__1_-removebg-preview.png"
                           }
                         ></Avatar>
-                   <div style={{ maxWidth: '600px' }}>      
-      <SyntaxHighlighter language="javascript" style={{ ...dark, width: '300px' }} >
+                        
+                   <div className={style.botReply}>   
+                    
+      <SyntaxHighlighter language="javascript" wrapLongLines={true} style={{ ...dark, maxWidth: '300px',whiteSpace: 'pre-wrap', overflowWrap: 'break-word',
+    wordWrap: 'break-word' }} >
         {item.text}
       </SyntaxHighlighter>
       </div>
                         
                       </li>
+                      </div>
                     </div>
                     <div>
                       <span onClick={() => handleCopy(item.text)}>
