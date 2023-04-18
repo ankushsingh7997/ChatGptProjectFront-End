@@ -573,6 +573,15 @@ color: #fff;
  
 
 }
+#myTextarea {
+  resize: none;
+  overflow: hidden;
+}
+
+
+
+
+
 
 .updateCancleButton
 {

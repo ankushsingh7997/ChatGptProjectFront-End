@@ -15,6 +15,9 @@ import MenuItem from "@mui/material/MenuItem";
 import { FacebookShareButton, FacebookIcon } from "react-share";
 import { chatLogView, userprofileData } from "../../recoil/atom";
 import Avatar from "@mui/material/Avatar";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
 
 function ChatComponent() {
   const [userChatLog, setUserChat] = useRecoilState(userChat);
@@ -70,6 +73,7 @@ function ChatComponent() {
       if (!result.status) {
         // need to add error here
       } else {
+        console.log(result.message.toString())
         setConversation([
           conversation.push({ user: "bot", text: result.message }),
           ...conversation,
@@ -95,6 +99,10 @@ function ChatComponent() {
       .catch(() => console.log("some error"));
 
     // here in then  i  have to add code to show that text is successfully copied
+  };
+  const handleResize = (event) => {
+    event.target.style.height = "auto";
+    event.target.style.height = event.target.scrollHeight + "px";
   };
 
   const handleTwitterShare = (text) => {
@@ -145,8 +153,12 @@ function ChatComponent() {
                             "https://classroom-training-bucket.s3.ap-south-1.amazonaws.com/profileImage/alex-knight-2EJCSULRwC8-unsplash__1_-removebg-preview.png"
                           }
                         ></Avatar>
-
-                        {item.text}
+                   <div style={{ maxWidth: '600px' }}>      
+      <SyntaxHighlighter language="javascript" style={{ ...dark, width: '300px' }} >
+        {item.text}
+      </SyntaxHighlighter>
+      </div>
+                        
                       </li>
                     </div>
                     <div>
@@ -236,3 +248,29 @@ function ChatComponent() {
   );
 }
 export default ChatComponent;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* <textarea onInput={handleResize}
+      id="myTextarea"
+      rows={50}
+      cols={100}
+      style={{ resize: "none", overflow: "hidden" }} value={item.text}/> */}
