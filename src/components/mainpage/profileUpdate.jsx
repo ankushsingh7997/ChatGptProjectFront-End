@@ -88,7 +88,7 @@ function EditProfile() {
 
       let responseData = await axios
         .put(
-          `https://chatgpt3-ujj0.onrender.com/user/${userid}/update`,
+          `https://summer-code-project-backend-72pe.vercel.app/user/${userid}/update`,
           formData,
           config
         )

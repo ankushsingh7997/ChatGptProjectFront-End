@@ -26,7 +26,7 @@ function LeftSlide() {
     }
 
     (async () => {
-      await fetch(`https://chatgpt3-ujj0.onrender.com/fetchuser/${userid}`)
+      await fetch(`https://summer-code-project-backend-72pe.vercel.app/fetchuser/${userid}`)
         .then((res) => res.json())
         .then((data) => {
           setUserData(data.chatLogs.questions);
@@ -37,7 +37,7 @@ function LeftSlide() {
 
   async function handleDelete(uniqueKey) {
     let result = await fetch(
-      `https://chatgpt3-ujj0.onrender.com/deleteChat/${userid}/${uniqueKey}`,
+      `https://summer-code-project-backend-72pe.vercel.app/deleteChat/${userid}/${uniqueKey}`,
       {
         method: "DELETE",
         headers: {
@@ -63,7 +63,7 @@ function LeftSlide() {
   const handleDeleteConversation = async () => {
     if (userData.length != 0) {
       let result = await fetch(
-        `https://chatgpt3-ujj0.onrender.com/deleteAllChat/${userid}`,
+        `https://summer-code-project-backend-72pe.vercel.app/deleteAllChat/${userid}`,
         {
           method: "DELETE",
           headers: {

@@ -55,7 +55,7 @@ function ChatComponent() {
       ]);
 
       let result = await fetch(
-        `https://chatgpt3-ujj0.onrender.com/ask/${userid}`,
+        `https://summer-code-project-backend-72pe.vercel.app/ask/${userid}`,
         {
           method: "POST",
           headers: {
