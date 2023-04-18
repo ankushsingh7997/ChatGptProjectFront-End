@@ -147,7 +147,7 @@ function ChatComponent() {
                 <div key={index} className={style.conversationOuther}>
                   <div className={style.convoAndLogo}>
                     <div className={style.conversation}>
-                    <div>  
+                     
                       <li className={style.BotReply}>
                         <Avatar
                           src={
@@ -162,11 +162,8 @@ function ChatComponent() {
         {item.text}
       </SyntaxHighlighter>
       </div>
-                        
-                      </li>
-                      </div>
-                    </div>
-                    <div>
+
+      <div className={style.copyClass}>
                       <span onClick={() => handleCopy(item.text)}>
                         {" "}
                         <IconButton style={{ color: "white" }}>
@@ -216,6 +213,11 @@ function ChatComponent() {
                         </Menu>
                       </span>
                     </div>
+                        
+                      </li>
+                      
+                    </div>
+                    
                   </div>
                 </div>
               );
