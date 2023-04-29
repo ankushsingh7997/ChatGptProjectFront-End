@@ -36,7 +36,7 @@ export default function Register() {
           let item = { name, email, password,phone };
           let dataa = JSON.stringify(item);
           console.log(JSON.stringify(item)); //--------------
-          let result = await fetch("https://chatgpt3-ujj0.onrender.com/register", {
+          let result = await fetch("https://summer-code-project-backend-72pe.vercel.app/register", {
             method: "POST",
 
             headers: {
