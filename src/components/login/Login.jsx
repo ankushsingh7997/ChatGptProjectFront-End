@@ -25,7 +25,7 @@ export default function Login() {
     } else {
       let obj = { email, password };
 
-      let result = await fetch("https://summer-code-project-backend-72pe.vercel.app/login", {
+      let result = await fetch("https://summer-code-project-backend.vercel.app/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
