@@ -73,7 +73,7 @@ function ChatComponent() {
       if (!result.status) {
         // need to add error here
       } else {
-        console.log(result.message.toString())
+        // console.log(result.message.toString())
         setConversation([
           conversation.push({ user: "bot", text: result.message }),
           ...conversation,
