@@ -151,7 +151,7 @@ function ChatComponent() {
                       <li className={style.BotReply}>
                         <Avatar
                           src={
-                            "https://classroom-training-bucket.s3.ap-south-1.amazonaws.com/profileImage/alex-knight-2EJCSULRwC8-unsplash__1_-removebg-preview.png"
+                            "https://classroom-training-bucket.s3.ap-south-1.amazonaws.com/profileImage/alex-knight-2EJCSULRwC8-unsplash.jpg"
                           }
                         ></Avatar>
                         
